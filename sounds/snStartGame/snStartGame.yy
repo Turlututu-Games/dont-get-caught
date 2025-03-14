@@ -9,7 +9,7 @@
   "bitRate":192,
   "compression":0,
   "conversionMode":0,
-  "duration":2.769252,
+  "duration":0.0,
   "name":"snStartGame",
   "parent":{
     "name":"Sounds",

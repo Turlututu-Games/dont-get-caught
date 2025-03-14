@@ -9,7 +9,7 @@
   "bitRate":192,
   "compression":0,
   "conversionMode":0,
-  "duration":0.317143,
+  "duration":0.0,
   "name":"snComputerExecute",
   "parent":{
     "name":"Sounds",

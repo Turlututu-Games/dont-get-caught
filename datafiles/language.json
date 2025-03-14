@@ -1,0 +1,42 @@
+{
+  "english": {
+    "exit": "Exit",
+    "menuContinue": "Continue",
+    "menuRestart": "Restart Level",
+    "menuReturnToMenu": "Return to Main Menu",
+    "menuTestLevels": "Tests Levels",
+    "menuStartDemo": "Start Demo",
+    "optionDisplay": "Display",
+    "optionFullScreen": "Fullscreen",
+    "optionLanguage": "Language",
+    "optionLanguageEnglish": "English",
+    "optionLanguageFrench": "French",
+    "optionMusic": "Music",
+    "optionNoFullScreen": "Windowed",
+    "optionSound": "Sound",
+    "optionVolumeHigh": "High",
+    "optionVolumeLow": "Low",
+    "optionVolumeMedium": "Medium",
+    "options": "Options"
+  },
+  "french": {
+    "exit": "Quitter",
+    "menuContinue": "Continuer",
+    "menuRestart": "Recommencer le niveau",
+    "menuReturnToMenu": "Retour au menu principal",
+    "menuTestLevels": "Niveaux de tests",
+    "menuStartDemo": "Démarrer la démo",
+    "optionDisplay": "Affichage",
+    "optionFullScreen": "Plein Écran",
+    "optionLanguage": "Langue",
+    "optionLanguageEnglish": "Anglais",
+    "optionLanguageFrench": "Français",
+    "optionMusic": "Musique",
+    "optionNoFullScreen": "Fenêtré",
+    "optionSound": "Son",
+    "optionVolumeHigh": "Fort",
+    "optionVolumeLow": "Faible",
+    "optionVolumeMedium": "Moyen",
+    "options": "Options"
+  }
+}

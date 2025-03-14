@@ -1,12 +1,12 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"Approach",
   "isCompatibility":false,
   "isDnD":false,
   "name":"Approach",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Gameplay",
+    "path":"folders/Scripts/Gameplay.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

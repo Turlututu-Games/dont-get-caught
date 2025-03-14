@@ -1,31 +1,28 @@
-/// @description Insert description here
-// You can write your code in this editor
-
 #region Controls
 
-_key_left = 0;	
-_key_right = 0;	
-_key_jump = 0;	
-_key_interract = 0;
-_key_up = 0;
-_key_down = 0;
-_mouse_left_click = 0;
-_mouse_right_click = 0;
+var _inputLeft = 0;	
+var _inputRight = 0;	
+var _inputJump = 0;	
+var _inputUse = 0;
+var _inputUp = 0;
+var _inputDown = 0;
+var _inputNextCamera = 0;
+var _inputPreviousCamera = 0;
 
 if(hasControl) {
 // Get player inputs
-	_key_left = keyboard_check(vk_left);
-	_key_right = keyboard_check(vk_right);
-	_key_jump = keyboard_check_pressed(vk_space); // Only true on the first frame where space is pressed
-	_key_interract = keyboard_check_pressed(vk_shift);
-	_key_up = keyboard_check(vk_up);	
-	_key_down = keyboard_check(vk_down);
-	_mouse_left_click = mouse_check_button_pressed(mb_left);
-	_mouse_right_click = mouse_check_button_pressed(mb_right);
+	_inputLeft = global.inputs.left;
+	_inputRight = global.inputs.right;
+	_inputJump = global.inputs.jump; // Only true on the first frame where space is pressed
+	_inputUse = global.inputs.use;
+	_inputUp = global.inputs.up;	
+	_inputDown = global.inputs.down;
+	_inputNextCamera = global.inputs.nextCamera;
+	_inputPreviousCamera = global.inputs.previousCamera;
 }
 #endregion
 
-if(!started && (_key_left || _key_right || _key_jump)) {
+if(!started && (_inputLeft || _inputRight || _inputJump)) {
 	if(instance_exists(oAlarm)) {
 		with(oAlarm) {
 			started = true;	
@@ -36,16 +33,16 @@ if(!started && (_key_left || _key_right || _key_jump)) {
 
 #region Calculate states and movements
 state = ActionStates.IDLE;
-_move = _key_right - _key_left; // Calculate movement.
+_move = _inputRight - _inputLeft; // Calculate movement.
 _touchingFloor = place_meeting(x, y+1, oWall);
 _onLadder = place_meeting(x, y, oLadder);
 _onTopLadder = place_meeting(x, y+1, oLadder);
 _canTakeRope = place_meeting(x, y-16, oRope);
 _canUseComputer = place_meeting(x, y+1, oComputer);
 
-_affectedByGravity = !(_onTopLadder || onRope); // Indicate if the gravity must be active (not active in ladder and rope)
+var _affectedByGravity = !(_onTopLadder || onRope); // Indicate if the gravity must be active (not active in ladder and rope)
 
-_offsetMeetingY = 0;
+var _offsetMeetingY = 0;
 
 if(_move != 0) {
 	state = ActionStates.WALK;	
@@ -62,21 +59,21 @@ if(_affectedByGravity) {
 }
 
 // Check if the player can jump
-if ((_touchingFloor || _canTakeRope) && _key_jump) {
+if ((_touchingFloor || _canTakeRope) && _inputJump) {
 	verticalSpeed = -jumpSpeed;
 	onRope = false;
 	state = ActionStates.JUMP_FALL;	
 }
 
-if (_touchingFloor && _canTakeRope && (_key_interract || _key_up)) {
+if (_touchingFloor && _canTakeRope && (_inputUse || _inputUp)) {
 	onRope = true;
 }
 
-/*if(_canUseComputer && greenKey && _key_interract && cooldownInterraction = -1) {
+/*if(_canUseComputer && greenKey && _inputUse && cooldownInterraction = -1) {
 	state = ActionStates.INTERRACT;	
 	cooldownInterraction = 60;
 }*/
-if(_canUseComputer && _key_interract && cooldownInterraction = -1) {
+if(_canUseComputer && _inputUse && cooldownInterraction = -1) {
 	cooldownInterraction = 30;
 	hasControl = false;
 }
@@ -110,9 +107,9 @@ if(_onLadder) {
 }
 
 if(_onTopLadder) {
-	if(_key_up) {
+	if(_inputUp) {
 		verticalSpeed = -walkSpeed;	
-	} else if(_key_down) {
+	} else if(_inputDown) {
 		verticalSpeed = walkSpeed;	
 	} else {
 		verticalSpeed = 0;
@@ -120,7 +117,7 @@ if(_onTopLadder) {
 }
 
 if(onRope) {
-	if(_key_down) {
+	if(_inputDown) {
 		verticalSpeed += gravityForce;	
 		onRope = false;
 		state = ActionStates.JUMP_FALL;	
@@ -130,8 +127,8 @@ if(onRope) {
 
 
 #region Calculate collisions
-meeting_horizontal = false;
-meeting_vertical = false;
+var meeting_horizontal = false;
+var meeting_vertical = false;
 
 	if (place_meeting(x+horizontalSpeed, y + _offsetMeetingY, oBlock)) {
 	// Sign will return -1 or 1 depending on the base sign of the input. So in this loop, we move 1px each time to fine the closest position
@@ -161,6 +158,13 @@ switch(state) {
 	case ActionStates.WALK: {
 		image_speed = 0.5;
 		sprite_index = sPlayerJohnWalk;	
+		
+		if(image_index % 2 == 0) {
+			var _fragmentArray = array_create(1, oStep);
+			
+			dropItems(x,y-10 ,0, _fragmentArray);	
+		}
+
 		if(previousState != state) {
 			stopAllSounds();
 			audio_play_sound(snWalk, 10, true, 0.5);
@@ -242,7 +246,7 @@ if(horizontalSpeed != 0) {
 
 #region Camera Manipulation
 
-NB_CAMERA = array_length(currentCamerasObject);
+var NB_CAMERA = array_length(currentCamerasObject);
 // FIRST_CAMERA = currentCamerasObject[0];
 // LAST_CAMERA = currentCamerasObject[NB_CAMERA - 1];
 // CURRENT_CAMERA = 0;
@@ -272,8 +276,8 @@ if(activeCamera != currentCameraIndex) {
 	activeCamera = currentCameraIndex;	
 }
 
-_previousCameraIndex = currentCameraIndex - 1;
-_nextCameraIndex = currentCameraIndex + 1;
+var _previousCameraIndex = currentCameraIndex - 1;
+var _nextCameraIndex = currentCameraIndex + 1;
 
 if(_previousCameraIndex < 0) {
 	_previousCameraIndex = NB_CAMERA - 1;	
@@ -283,14 +287,14 @@ if(_nextCameraIndex >= NB_CAMERA) {
 	_nextCameraIndex = 0;	
 }
 
-if(_mouse_left_click) {
+if(_inputNextCamera) {
 	//view_set_camera(view_hport[0], _nextCamera);
 	
 	//currentCamera = view_get_camera(view_current);
 	currentCameraIndex = _nextCameraIndex;
 }
 
-if(_mouse_right_click) {
+if(_inputPreviousCamera) {
 	//view_set_camera(view_hport[0], _previousCamera);
 	
 	//currentCamera = view_get_camera(view_current);

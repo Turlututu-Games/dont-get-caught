@@ -1,6 +1,3 @@
-/// @description Insert description here
-// You can write your code in this editor
-
 var animationFrame = 0;
 
 frameCounter++;
@@ -22,7 +19,8 @@ with(oPlayer) {
 	if(activeCameraObject.status == CameraStatus.ACTIVE) {
 		draw_sprite(sCameraOverlay, animationFrame, 0, 0);
 	} else {
-		draw_sprite(sCameraOff, animationFrame, 0, 0);
+		// Always display the frame without the red dot
+		draw_sprite(sCameraOverlay, 0, 0, 0); 
 	}
 	
 	var maxIndexActive = array_length(currentCamerasObject);

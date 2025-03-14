@@ -1,33 +1,37 @@
-/// @description GUI/Vars/Menu setup
+global.allowPause = false;
 
-guiWidth = display_get_gui_width();
-guiHeight = display_get_gui_height();
-guiXMargin = 32;
-guiYMargin = 128;
+var _menuOptions = new MenuItemOptions();
+// _menuOptions.offsetX = -20;
+_menuOptions.halign = fa_right;
+// _menuOptions.doubleWidth = true;
+// _menuOptions.minimalWidth = global.windowWidth * 0.3;
 
-menuX = guiWidth + 200;
-menuY = guiHeight - guiYMargin;
-menuXTarget = guiWidth - guiXMargin;
-menuSpeed = 25; // lower is faster;
-menuFont = fMenu;
-menuItemHeight = font_get_size(menuFont);
-menuCommitted = -1;
-menuControl = true;
+var _startDemo = function() {
+	playSound(snStartGame)
+	playMusic(snMusic, 0.2)
+	slideTransition(Transition.GOTO, rTuto1); 	
+};
 
-//menu[2] = "New Game";
-//menu[1] = "Options";
-//menu[0] = "Quit";
+var _debugRooms = function() {
 
-// Inverse order !
-menu = [
-	"Quit",
-	"New Game"
-]
+};
 
-menuItems = array_length(menu);
+var _options = function() {
+	slideTransition(Transition.GOTO, rOptions);
+};
 
-menuTop = menuY - ((menuItemHeight * 1.5) * menuItems);
+var _exit = function() {
+	game_end();
+};
 
-menuCursor = menuItems - 1;
+var _menu = [
+	new MenuItem("menuStartDemo", _startDemo, _menuOptions),
+	new MenuItem("menuTestLevels", _debugRooms, _menuOptions),
+	new MenuItem("options",_options, _menuOptions),
+	new MenuItem("exit",_exit, _menuOptions),
+];
 
-audio_play_sound(snMusicMenu, 10, true, 0.2);
+menu = new Menu(_menu);
+
+// audio_play_sound(snMusicMenu, 10, true, 0.2);
+playMusic(snMusicMenu, 0.2)

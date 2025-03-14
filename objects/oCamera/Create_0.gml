@@ -7,11 +7,7 @@ xTo = xstart;
 yTo = ystart;
 first = false;
 
-enum CameraStatus {
-	ACTIVE,
-	OFF,
-	JAMMED,
-}
+
 
 status = CameraStatus.ACTIVE;
 cameraDetectionSpeed = 0;

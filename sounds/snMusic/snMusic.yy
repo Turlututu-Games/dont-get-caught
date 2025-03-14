@@ -9,7 +9,7 @@
   "bitRate":192,
   "compression":0,
   "conversionMode":0,
-  "duration":104.72728,
+  "duration":0.0,
   "name":"snMusic",
   "parent":{
     "name":"Sounds",

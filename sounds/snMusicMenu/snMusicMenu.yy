@@ -6,10 +6,10 @@
     "path":"audiogroups/audiogroup_default",
   },
   "bitDepth":1,
-  "bitRate":192,
+  "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":66.78261,
+  "duration":0.0,
   "name":"snMusicMenu",
   "parent":{
     "name":"Sounds",
@@ -20,6 +20,6 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snMusicMenu.ogg",
-  "type":1,
+  "type":0,
   "volume":1.0,
 }

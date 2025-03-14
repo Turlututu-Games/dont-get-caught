@@ -3,8 +3,25 @@
 // Division by 25 it to make smooth movements
 //x += (xTo - x) / 25;
 //y += (yTo - y) / 25;
-x = xTo;
-y = yTo;
+switch(status) {
+	case CameraStatus.ACTIVE:
+		x = xTo;
+		y = yTo;
+		break;
+	case CameraStatus.OFF:
+		if(instance_exists(oOffline)) {
+			with(oOffline) {
+				other.x = xstart;
+				other.y = ystart;
+			}
+		} else {
+			x = -1000
+			y = -1000
+		}
+		break;
+	
+}
+
 
 // Prevent camera to go outside of the room
 //x = clamp(x, view_w_half, room_width - view_w_half);

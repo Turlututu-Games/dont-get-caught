@@ -9,7 +9,7 @@
   "bitRate":192,
   "compression":0,
   "conversionMode":0,
-  "duration":2.204898,
+  "duration":0.0,
   "name":"snEnding",
   "parent":{
     "name":"Sounds",

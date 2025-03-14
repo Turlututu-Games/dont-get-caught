@@ -10,5 +10,5 @@ functionToCall = function() {
 		hasControl = false;	
 	}
 	
-	audio_play_sound(happy_bells_start, 10, false);
+	audio_play_sound(snEnding, 10, false);
 }

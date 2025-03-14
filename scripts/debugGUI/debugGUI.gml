@@ -9,3 +9,10 @@ function debugGUI(element, index)
 	draw_set_valign(fa_bottom);
 	draw_text(80,position, text);
 }
+
+/// @func addDebugVariable(name, value) Add a variable to the debug output for the current step
+/// @param {string} name Name of the variable
+/// @param {any} value Value to display
+function addDebugVariable(name, value) {
+	array_push(global.debugVariables, [name, value]);
+}
