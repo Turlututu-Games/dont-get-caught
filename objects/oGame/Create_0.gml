@@ -82,6 +82,10 @@ switch (os_type) {
         break;
 }
 
+if(os_browser != browser_not_a_browser) {
+	global.platform = Platforms.BROWSERS;
+}
+
 show_debug_message("Platform: {0}", global.platform);
 
 frame = 0;
