@@ -1,6 +1,6 @@
-global.debugVariables = [
+/* global.debugVariables = [
 	["pause",global.pause]
-];
+];*/
 
 if(global.pause != previousState) {
 	pauseText = translate("menuPause"); // Retranslate each time the pause is toggled
@@ -9,3 +9,5 @@ if(global.pause != previousState) {
 } else {
 	global.pauseToggle = false;	
 }
+
+addDebugVariable("global.pause", global.pause);

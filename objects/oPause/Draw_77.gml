@@ -5,7 +5,7 @@ if(global.allowPause && global.inputs.pause) {
 		//instance_deactivate_all(true);
 		// instance_deactivate_object(oGameObject);
 		with(oGameObject) {
-			gamePausedImageSpeed = image_speed;
+			global.gamePausedImageSpeed = image_speed;
 			image_speed = 0;
 		}
 		
@@ -26,7 +26,7 @@ if(global.allowPause && global.inputs.pause) {
 		//instance_activate_all();
 		
 		with(oGameObject) {
-			image_speed = gamePausedImageSpeed;
+			image_speed = global.gamePausedImageSpeed;
 		}
 		
 		/*if(surface_exists(pauseSurf)) {

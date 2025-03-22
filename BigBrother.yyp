@@ -78,7 +78,7 @@
     {"id":{"name":"oDoorBlue","path":"objects/oDoorBlue/oDoorBlue.yy",},},
     {"id":{"name":"oDoorGreen","path":"objects/oDoorGreen/oDoorGreen.yy",},},
     {"id":{"name":"oDoorRed","path":"objects/oDoorRed/oDoorRed.yy",},},
-    {"id":{"name":"oFrament","path":"objects/oFrament/oFrament.yy",},},
+    {"id":{"name":"oFragment","path":"objects/oFragment/oFragment.yy",},},
     {"id":{"name":"oGame","path":"objects/oGame/oGame.yy",},},
     {"id":{"name":"oGameObject","path":"objects/oGameObject/oGameObject.yy",},},
     {"id":{"name":"oGUI","path":"objects/oGUI/oGUI.yy",},},

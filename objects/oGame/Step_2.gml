@@ -3,7 +3,7 @@ if(global.inputs.restart) {
 }
 
 // Pause the Game
-if(global.inputs.pause) {
+/* if(global.inputs.pause) {
 	global.gamePaused = !global.gamePaused;
 	
 	if(global.gamePaused) {
@@ -19,3 +19,4 @@ if(global.inputs.pause) {
 		}	
 	}
 }
+*/

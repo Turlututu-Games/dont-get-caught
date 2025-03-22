@@ -13,7 +13,10 @@
     "name":"GUI",
     "path":"folders/Objects/GUI.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oGameObject",
+    "path":"objects/oGameObject/oGameObject.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

@@ -11,8 +11,6 @@ global.exiting = false;
 global.mouseCursor = false;
 cursorDisplayed = false;
 
-global.gamePaused = false;
-
 global.debugVariables = [];
 
 global.inputs = getInputs();
@@ -85,6 +83,9 @@ switch (os_type) {
 }
 
 show_debug_message("Platform: {0}", global.platform);
+
+frame = 0;
+
 
 if(STEAM) {
 	show_debug_message("Will load steam");

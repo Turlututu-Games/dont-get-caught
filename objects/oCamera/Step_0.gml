@@ -9,7 +9,7 @@ switch(status) {
 		y = yTo;
 		break;
 	case CameraStatus.OFF:
-		if(instance_exists(oOffline)) {
+		/*if(instance_exists(oOffline)) {
 			with(oOffline) {
 				other.x = xstart;
 				other.y = ystart;
@@ -17,7 +17,7 @@ switch(status) {
 		} else {
 			x = -1000
 			y = -1000
-		}
+		}*/
 		break;
 	
 }

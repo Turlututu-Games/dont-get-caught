@@ -39,3 +39,18 @@ function stopAllSounds() {
 }
 
 started = false; // Set to true after the first game interraction
+
+optionContinueGame = new MenuItem("menuContinue", function() {
+	global.pause = false;
+});
+
+optionRestartGame = new MenuItem("menuRestart", function() {
+	global.pause = false;
+	room_restart();
+});
+
+optionReturnToMenu = new MenuItem("menuReturnToMenu", function() {
+	global.pause = false;
+	slideTransition(Transition.GOTO, rMenu); 
+	global.allowPause = true;
+});

@@ -9,7 +9,8 @@ _menuOptions.halign = fa_right;
 var _startDemo = function() {
 	playSound(snStartGame)
 	playMusic(snMusic, 0.2)
-	slideTransition(Transition.GOTO, rTuto1); 	
+	slideTransition(Transition.GOTO, rTuto1); 
+	global.allowPause = true;
 };
 
 var _debugRooms = function() {

@@ -27,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sGameMecanisms",
+    "path":"sprites/sGameMecanisms/sGameMecanisms.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

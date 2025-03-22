@@ -1,4 +1,4 @@
-if(!global.gamePaused) {
+if(!global.pause) {
 	// Bounce
 	if(bounceCount != 0) {
 		bounce += (pi * bounceSpeed);

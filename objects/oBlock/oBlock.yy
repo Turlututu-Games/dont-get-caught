@@ -6,10 +6,13 @@
   "name":"oBlock",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"LevelDesign",
+    "path":"folders/Objects/LevelDesign.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oGameObject",
+    "path":"objects/oGameObject/oGameObject.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

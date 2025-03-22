@@ -12,7 +12,10 @@
     "name":"GUI",
     "path":"folders/Objects/GUI.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oGameObject",
+    "path":"objects/oGameObject/oGameObject.yy",
+  },
   "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -30,10 +33,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"sGameMecanisms",
-    "path":"sprites/sGameMecanisms/sGameMecanisms.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

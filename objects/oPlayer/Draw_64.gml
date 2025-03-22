@@ -4,7 +4,7 @@
 draw_flush();
 
 draw_set_color(c_white);
-variables = [
+var variables = [
 	// ["changedCamera", changedCamera],
 	//["_key_left", _key_left],
 	//["_key_right", _key_right],
@@ -13,9 +13,11 @@ variables = [
 	//["_key_up", _key_up],
 	//["_key_down", _key_down],
 	//["_move", _move],
-	["_touchingFloor", _touchingFloor],
-	["_onLadder", _onLadder],
-	["_onTopLadder", _onTopLadder],
+	//["_touchingFloor", _touchingFloor],
+	//["_onLadder", _onLadder],
+	//["_onTopLadder", _onTopLadder],
+	["next camera", global.inputs.nextCamera],
+	["image_speed", image_speed],
 	//["_canTakeRope", _canTakeRope],
 	//["_affectedByGravity", _affectedByGravity],
 	//["_mouse_left_click", _mouse_left_click],*/
@@ -36,12 +38,19 @@ variables = [
 
 ];
 
-/*function arrayDebugCamera(element, index) {
-	var cameraDebug = ["camera" + string(index), element.cam];
-	array_push(variables, cameraDebug); 
+function arrayDebugCamera(element, index) {
+	// var cameraDebug = ["camera" + string(index), element.cam];
+	addDebugVariable("camera" + string(index), element.cam);
 }
 
-array_foreach(currentCamerasObject, arrayDebugCamera);*/
+function arrayGameplayOptions(element) {
+	addDebugVariable(element[0], element[1]);
+}
 
-// array_map(variables, debugGUI);
+
+// array_foreach(currentCamerasObject, arrayDebugCamera);
+
+array_foreach(variables, arrayGameplayOptions)
+
+
 

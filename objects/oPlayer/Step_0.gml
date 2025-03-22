@@ -9,6 +9,10 @@ var _inputDown = 0;
 var _inputNextCamera = 0;
 var _inputPreviousCamera = 0;
 
+if(global.pause) {
+	return;	
+}
+
 if(hasControl) {
 // Get player inputs
 	_inputLeft = global.inputs.left;
