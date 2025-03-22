@@ -5,8 +5,8 @@ if(started && !global.pause) {
 	alarmTimer -= detectionSpeed;
 
 	if(alarmTimer <= 0) {
-		audio_stop_sound(snAlertCamera);
-		audio_play_sound(snGameOver, 10, false);
+		audio_stop_sound(sfxAlertCamera);
+		playSound(sfxGameOver);
 		room_restart();	
 	}
 

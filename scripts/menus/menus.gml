@@ -5,7 +5,7 @@
 /// @param {Real} _unselectedOpacity Opacity for unselected item
 function MenuItemOptions(
 	_platforms = [],
-	_sound = snClickMenu,
+	_sound = sfxClickMenu,
 	_selectedOpacity = 1.0,
 	_unselectedOpacity = 0.7,
 ) constructor {

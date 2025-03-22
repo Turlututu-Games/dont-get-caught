@@ -10,7 +10,7 @@ function toggleCamera() {
 			status = CameraStatus.ACTIVE;	
 		}
 	}
-	audio_play_sound(snComputerExecute, 10, false);
+	playSound(sfxComputerExecute);
 	displayMessage("Camera 4 has been toggled")
 }
 

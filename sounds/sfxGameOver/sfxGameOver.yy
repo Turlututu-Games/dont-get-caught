@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snClickMenu",
+  "%Name":"sfxGameOver",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,7 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":0.0,
-  "name":"snClickMenu",
+  "name":"sfxGameOver",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snClickMenu",
+  "soundFile":"sfxGameOver",
   "type":1,
   "volume":1.0,
 }

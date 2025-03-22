@@ -10,5 +10,5 @@ functionToCall = function() {
 		hasControl = false;	
 	}
 	
-	audio_play_sound(snEnding, 10, false);
+	playSound(sfxEnding);
 }

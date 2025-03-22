@@ -9,16 +9,16 @@ function selectMenuItem() {
 
 function enterGame() {
 	menuControl = false;
-	audio_stop_sound(snMusicMenu);
-	audio_play_sound(snStartGame, 10, false);
-	audio_play_sound(snMusic, 10, true, 0.2);
+	audio_stop_sound(musicMenu);
+	playSound(sfxStartGame);
+	playMusic(musicMusicLevel);
 	slideTransition(Transition.GOTO, rTuto1); 
 }
 
 // Keyboard Controls
 if(menuControl) {
 	if(global.inputs.upMenu) {
-		audio_play_sound(snClickMenu, 10, false);
+		playSound(sfxClickMenu);
 		menuCursor++;	
 		if(menuCursor >= menuLength) {
 			menuCursor = 0;	
@@ -27,7 +27,7 @@ if(menuControl) {
 	
 	if(global.inputs.downMenu) {
 		menuCursor--;	
-		audio_play_sound(snClickMenu, 10, false);
+		playSound(sfxClickMenu);
 		if(menuCursor < 0) {
 			menuCursor = menuLength - 1;	
 		}
@@ -42,7 +42,7 @@ if(menuControl) {
 	if(mouseYGui < menuY && mouseYGui > menuTop) {
 		var newMenuCursor = (menuY - mouseYGui) div (menuItemHeight * 1.5);
 		if(menuCursor != newMenuCursor) {
-			audio_play_sound(snClickMenu, 10, false);
+			playSound(sfxClickMenu);
 			menuCursor = newMenuCursor;
 		}
 		

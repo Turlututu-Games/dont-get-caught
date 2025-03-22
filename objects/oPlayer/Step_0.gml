@@ -171,10 +171,10 @@ switch(state) {
 
 		if(previousState != state) {
 			stopAllSounds();
-			audio_play_sound(snWalk, 10, true, 0.5);
+			playSound(sfxWalk, 0.5, 0, true);
 		}
 		if(previousState == ActionStates.JUMP_FALL) {		
-			audio_play_sound(snFall, 10, false, 0.5);
+			playSound(sfxFall, 0.5);
 		}
 		break;	
 	}
@@ -201,7 +201,7 @@ switch(state) {
 			// Rope animation
 			image_speed = 0.5;
 			if(previousState != state) {
-				audio_play_sound(snRope, 10, true, 0.5);
+				playSound(sfxRope, 0.5, 0, true);
 			}
 		}
 		
@@ -216,7 +216,7 @@ switch(state) {
 			// Climb animation
 			image_speed = 0.5;
 			if(previousState != state) {
-				audio_play_sound(snClimb, 10, true, 0.5);
+				playSound(sfxClimb, 0.5, 0, true);
 			}
 		}		
 
@@ -234,7 +234,7 @@ switch(state) {
 		sprite_index = sPlayerJohnIdle;	
 		stopAllSounds();
 		if(previousState == ActionStates.JUMP_FALL) {		
-			audio_play_sound(snFall, 10, false, 0.5);
+			playSound(sfxFall);
 		}
 		break;	
 	}

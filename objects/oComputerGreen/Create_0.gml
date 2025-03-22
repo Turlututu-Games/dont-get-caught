@@ -17,14 +17,14 @@ function openGreenGate() {
 	sprite_index = sComputerOff;
 	used = true;
 	displayMessage("Green gate is now open");
-	audio_play_sound(snComputerOpenGate, 10, false);
+	playSound(sfxComputerOpenGate);
 
 	
 }
 
 function noGreenKey() {
 	displayMessage("You don't have\nthe green key");
-	audio_play_sound(snComputerError, 10, false);
+	playSound(sfxComputerError);
 }
 
 function useComputer() {

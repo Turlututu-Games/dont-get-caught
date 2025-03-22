@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snComputerError",
+  "%Name":"sfxComputerError",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,8 +9,8 @@
   "bitRate":192,
   "compression":0,
   "conversionMode":0,
-  "duration":0.455488,
-  "name":"snComputerError",
+  "duration":0.0,
+  "name":"sfxComputerError",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snComputerError",
+  "soundFile":"sfxComputerError",
   "type":1,
   "volume":1.0,
 }

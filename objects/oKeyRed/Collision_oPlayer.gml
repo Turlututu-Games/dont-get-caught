@@ -1,4 +1,4 @@
-audio_play_sound(snClickMenu, 10, false);
+playSound(sfxClickMenu);
 instance_destroy();
 
 with(other) {

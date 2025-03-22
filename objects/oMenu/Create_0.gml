@@ -7,8 +7,8 @@ var _menuOptionsDesktop = new MenuItemOptions([Platforms.DESKTOP]);
 _menuOptionsDesktop.halign = fa_right;
 
 var _startDemo = function() {
-	playSound(snStartGame)
-	playMusic(snMusic, 0.2)
+	playSound(sfxStartGame)
+	playMusic(musicMusicLevel, 0.2)
 	slideTransition(Transition.GOTO, rTuto1); 
 	global.allowPause = true;
 };
@@ -40,4 +40,4 @@ array_push(_menu, new MenuItem("exit",_exit, _menuOptionsDesktop));
 
 menu = new Menu(_menu);
 
-playMusic(snMusicMenu, 0.2)
+playMusic(musicMenu, 0.2)

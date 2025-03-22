@@ -32,10 +32,10 @@ previousState = -1;
 currentSound = -1;
 
 function stopAllSounds() {
-	audio_stop_sound(snClimb);
-	audio_stop_sound(snFall);
-	audio_stop_sound(snRope);
-	audio_stop_sound(snWalk);
+	audio_stop_sound(sfxClimb);
+	audio_stop_sound(sfxFall);
+	audio_stop_sound(sfxRope);
+	audio_stop_sound(sfxWalk);
 }
 
 started = false; // Set to true after the first game interraction
