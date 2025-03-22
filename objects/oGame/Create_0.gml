@@ -43,8 +43,11 @@ setLanguage(global.gameOptions.language);
 
 window_set_fullscreen(global.gameOptions.fullscreen);
 
-global.windowWidth = display_get_gui_width();
-global.windowHeight = display_get_gui_height();
+global.windowHeight = window_get_height();
+global.windowWidth = global.windowHeight * 1.77777777;
+
+window_set_min_height(270);
+window_set_min_width(480);
 
 switch (os_type) {
     case os_windows:

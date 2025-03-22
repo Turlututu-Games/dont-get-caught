@@ -15,6 +15,19 @@ if(!global.pause) {
 	}
 }
 
+var _mainWidth = global.windowWidth / 1.333333333;
+var _mainHeight = global.windowHeight;
+
+var _sideWidth = global.windowWidth / 8;
+var _sideHeight = global.windowHeight / 6;
+
+addDebugVariable("_mainWidth", _mainWidth);
+addDebugVariable("_mainHeight", _mainHeight);
+addDebugVariable("_sideWidth", _sideWidth);
+addDebugVariable("_sideHeight", _sideHeight);
+
+
+
 with(oPlayer) {
 
 
@@ -25,30 +38,30 @@ with(oPlayer) {
 		var activeCameraObject = currentCamerasObject[other.currentCameraBuffer];
 	
 		if(activeCameraObject.status == CameraStatus.ACTIVE) {
-			draw_sprite(sCameraOverlay, other.animationFrame, 0, 0);
+			draw_sprite_stretched(sCameraOverlay, other.animationFrame, 0, 0, _mainWidth, _mainHeight);
 		} else {
 			// Always display the frame without the red dot
 			//draw_sprite(sCameraOverlay, 0, 0, 0); 
-			draw_sprite(sCameraOff, other.animationFrame, 0, 0);
+			draw_sprite_stretched(sCameraOff, other.animationFrame, 0, 0, _mainWidth, _mainHeight);
 		}
 	
 		var maxIndexActive = array_length(currentCamerasObject);
 	
 		for(var index = 0; index < 10; index++) {
 		
-			var drawY = floor(index / 2) * 100;
-			var drawX = ((index % 2) * 100) + 600;
+			var drawY = floor(index / 2) * _sideHeight;
+			var drawX = ((index % 2) * _sideWidth) + _mainWidth;
 		
 	
 			if(index < maxIndexActive) {
 				var camera = currentCamerasObject[index];
 				if(camera.status == CameraStatus.ACTIVE) {
-					draw_sprite_stretched(sCameraOverlaySmall, other.animationFrame, drawX, drawY, 100, 100);
+					draw_sprite_stretched(sCameraOverlaySmall, other.animationFrame, drawX, drawY, _sideWidth, _sideHeight);
 				} else {
-					draw_sprite_stretched(sCameraOffSmall, other.animationFrame, drawX, drawY, 100, 100);
+					draw_sprite_stretched(sCameraOffSmall, other.animationFrame, drawX, drawY, _sideWidth, _sideHeight);
 				}
 			} else {
-				draw_sprite_stretched(sCameraShutdownSmall, other.animationFrame, drawX, drawY, 100, 100);
+				draw_sprite_stretched(sCameraShutdownSmall, other.animationFrame, drawX, drawY, _sideWidth, _sideHeight);
 			}
 		}
 	

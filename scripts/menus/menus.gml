@@ -457,6 +457,9 @@ function getMenuSizes() {
 	var _menuY = global.windowHeight - _guiYMargin;
 	var _menuXTarget = global.windowWidth - _guiXMargin;	
 	
+	addDebugVariable("_menuX", _menuX);
+	addDebugVariable("_menuY", _menuY);
+	
 	return {
 		guiXMargin: _guiXMargin,
 		guiYMargin: _guiYMargin,
