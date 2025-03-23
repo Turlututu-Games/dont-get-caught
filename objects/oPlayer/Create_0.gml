@@ -20,6 +20,8 @@ redKey = false;
 blueKey = false;
 cooldownInterraction = -1;
 
+collisionMap = layer_tilemap_get_id(layer_get_id(COLLISIONS_LAYER));
+
 /*var NB_CAMERA = 2;
 FIRST_CAMERA = currentCamera + 1;
 LAST_CAMERA = FIRST_CAMERA + NB_CAMERA;

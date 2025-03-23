@@ -38,7 +38,7 @@ if(!started && (_inputLeft || _inputRight || _inputJump)) {
 #region Calculate states and movements
 state = ActionStates.IDLE;
 _move = _inputRight - _inputLeft; // Calculate movement.
-_touchingFloor = place_meeting(x, y+1, oWall);
+_touchingFloor = place_meeting(x, y+1, [oWall, collisionMap]);
 _onLadder = place_meeting(x, y, oLadder);
 _onTopLadder = place_meeting(x, y+1, oLadder);
 _canTakeRope = place_meeting(x, y-16, oRope);
@@ -134,9 +134,9 @@ if(onRope) {
 var meeting_horizontal = false;
 var meeting_vertical = false;
 
-	if (place_meeting(x+horizontalSpeed, y + _offsetMeetingY, oBlock)) {
+	if (place_meeting(x+horizontalSpeed, y + _offsetMeetingY, [oBlock, collisionMap])) {
 	// Sign will return -1 or 1 depending on the base sign of the input. So in this loop, we move 1px each time to fine the closest position
-		while (!place_meeting(x+sign(horizontalSpeed), y + _offsetMeetingY, oBlock)) {
+		while (!place_meeting(x+sign(horizontalSpeed), y + _offsetMeetingY, [oBlock, collisionMap])) {
 			x = x + sign(horizontalSpeed);	
 		}
 		horizontalSpeed = 0;
@@ -146,14 +146,16 @@ var meeting_vertical = false;
 	x = x + horizontalSpeed;	
 
 	// Vertical collision (but getting as close as possible)
-	if (place_meeting(x, y+verticalSpeed, oBlock)) {
-		while (!place_meeting(x, y+sign(verticalSpeed), oBlock)) {
+	if (place_meeting(x, y+verticalSpeed, [oBlock, collisionMap])) {
+		while (!place_meeting(x, y+sign(verticalSpeed), [oBlock, collisionMap])) {
 			y = y + sign(verticalSpeed);	
 		}
 		verticalSpeed = 0;
 		meeting_vertical = true;
 	}
 	y = y + verticalSpeed;
+	
+// move_and_collide(horizontalSpeed, verticalSpeed, [oBlock, collisionMap]);
 #endregion
 
 #region Animation
@@ -163,10 +165,13 @@ switch(state) {
 		image_speed = 0.5;
 		sprite_index = sPlayerJohnWalk;	
 		
-		if(image_index % 2 == 0) {
-			var _fragmentArray = array_create(1, oStep);
+		// Currently only in debug!
+		if(DEBUG) {
+			if(image_index % 2 == 0) {
+				var _fragmentArray = array_create(1, oStep);
 			
-			dropItems(x,y-10 ,0, _fragmentArray);	
+				dropItems(x,y-10 ,0, _fragmentArray);	
+			}
 		}
 
 		if(previousState != state) {
