@@ -32,3 +32,5 @@ addDebugVariable("frame", frame);
 
 addDebugVariable("windowHeight", global.windowHeight)
 addDebugVariable("windowWidth", global.windowWidth)
+
+addDebugVariable("build_date",  date_date_string(GM_build_date))
