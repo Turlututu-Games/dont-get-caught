@@ -38,7 +38,6 @@ function getLanguageIdentifier(lang) {
 		case "fr":
 		case "en":		
 			return lang
-			break;
 		
 		default:
 			return "en"

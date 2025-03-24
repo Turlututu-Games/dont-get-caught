@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"Animations",
+  "%Name":"animations",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Animations",
+  "name":"animations",
   "parent":{
     "name":"Gameplay",
     "path":"folders/Scripts/Gameplay.yy",

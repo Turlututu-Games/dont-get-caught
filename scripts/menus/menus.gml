@@ -70,13 +70,24 @@ function Menu(_options = []) constructor {
 		}
 	};
 
+	/// @func Menu Render
+	/// @param {Real} _startX The starting position of the menu
+	/// @param {Real} _startY The starting position of the menu
+	/// @param {Real} _size The starting position of the menu
+	/// @param {Bool} _shadow The starting position of the menu
+	/// @param {Bool} _enableMouse The starting position of the menu
+	/// @param {Bool} _enableBox The starting position of the menu
+	/// @param {Bool} _cursors The starting position of the menu
+	/// @param {Constant.Color} _color The starting position of the menu
+	/// @param {Asset.GMSprite} _sprite The starting position of the menu
+	/// @param {Real} _yOffsets The starting position of the menu
 	static render = function(_startX, _startY, _size, _shadow = false, _enableMouse = true, _enableBox = true, _cursors = true, _color = c_white, _sprite = undefined, _yOffsets = undefined) {
 		if (!self.filtered) {
 			self.filter();
 		}
 		
 		var _initial_valign = draw_get_valign();
-		var _initial_halign = draw_get_halign();
+		var _initial_halign = draw_get_halign();				
 
 		for (var _i = 0; _i < array_length(self.options); _i++) {
 			var _print = "";
@@ -125,7 +136,7 @@ function Menu(_options = []) constructor {
 				_params = self.boundingBox(_offset_x, _offset_y, _size, _print, _current.option.doubleWidth, _current.option.minimalWidth);
 			}
 			
-			if(_enableMouse) {
+			if(_enableMouse) {					
 				self.mouse(_params, _i, _enableBox);
 			}
 			
@@ -291,10 +302,12 @@ function Menu(_options = []) constructor {
 				draw_set_color(c_black);
 				draw_rectangle(_x1, _y1, _x2, _y2, true);
 			}
+			
+
 
 			//show_debug_message({mouse_x, mouse_y, _x1, _y1, _x2, _y2});
 
-			if (point_in_rectangle(mouse_x, mouse_y, _x1, _y1, _x2, _y2)) {
+			if (point_in_rectangle(window_mouse_get_x(), window_mouse_get_y(), _x1, _y1, _x2, _y2)) {
 				if(self.optionSelected != _index) {
 					self.optionSelected = _index;
 					var _selected = self.options[self.optionSelected];
@@ -389,62 +402,6 @@ function Menu(_options = []) constructor {
 		self.options = _newOptions;
 		self.filtered = true;
 	};
-}
-
-function writeConfig() {
-	ini_open(SAVE);
-	ini_write_real("options", "music", global.gameOptions.music);
-	ini_write_real("options", "sound", global.gameOptions.sound);
-	ini_write_real("options", "fullscreen", global.gameOptions.fullscreen);	
-	ini_write_string("options", "language", global.gameOptions.language);
-
-	ini_close();
-
-}
-
-function toggleOptionMusic() {
-	global.gameOptions.music++;
-	if(global.gameOptions.music > 2) {
-		global.gameOptions.music = 0;	
-	}
-	
-	if(global.music.playing != undefined) {
-		var _music = global.music.playing;
-		global.music.playing = undefined;
-		var _position = audio_sound_get_track_position(global.music.id);
-		audio_stop_sound(_music);
-		playMusic(_music, global.music.intensity);
-		audio_sound_set_track_position(global.music.id, _position);
-	}
-	
-	writeConfig();
-}
-
-function toggleOptionSound() {
-	global.gameOptions.sound++;
-	if(global.gameOptions.sound > 2) {
-		global.gameOptions.sound = 0;	
-	}
-	writeConfig();
-}
-
-function toggleOptionLanguage() {
-	// Dirty, but good enough for the moment
-	
-	if(global.gameOptions.language == "en") {
-		global.gameOptions.language = "fr";	
-	} else {
-		global.gameOptions.language = "en";
-	}
-	
-	setLanguage(global.gameOptions.language);
-	writeConfig();
-}
-
-function toggleOptionFullScreen() {
-	global.gameOptions.fullscreen = !global.gameOptions.fullscreen;
-	window_set_fullscreen(global.gameOptions.fullscreen);
-	writeConfig();
 }
 
 function getMenuSizes() {

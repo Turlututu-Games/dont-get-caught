@@ -99,6 +99,8 @@ if(STEAM) {
 	if (steam_initialised()) {
 		show_debug_message("Game is ready");
 		room_goto(rMenu);
+	} else {
+		show_debug_message("Steam is not ready");
 	}
 } else {
 	room_goto(rMenu);
