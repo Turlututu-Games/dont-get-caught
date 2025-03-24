@@ -13,6 +13,17 @@ var _startDemo = function() {
 	global.allowPause = true;
 };
 
+var _playtest1Option1 = function() {
+	global.gameOptions.detectionTimer = true;
+	_startDemo();
+}
+
+var _playtest1Option2 = function() {
+	global.gameOptions.detectionTimer = false;
+	_startDemo();
+}
+
+
 var _debugRooms = function() {
 
 };
@@ -26,7 +37,9 @@ var _exit = function() {
 };
 
 var _menu = [
-	new MenuItem("menuStartDemo", _startDemo, _menuOptions), Temporary disabled
+	//new MenuItem("menuStartDemo", _startDemo, _menuOptions), Temporary disabled
+	new MenuItem("menuPlaytest1Option1", _playtest1Option1, _menuOptions),
+	new MenuItem("menuPlaytest1Option2", _playtest1Option2, _menuOptions),
 ];
 
 if(DEBUG) {

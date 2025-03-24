@@ -36,7 +36,8 @@ global.gameOptions = {
 	music: _musicOption,
 	sound: _soundOption,
 	fullscreen: _fullscreenOption,
-	language: _systemLanguagenOption
+	language: _systemLanguagenOption,
+	detectionTimer: true,
 }
 
 setLanguage(global.gameOptions.language);

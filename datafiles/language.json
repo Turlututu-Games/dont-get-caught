@@ -17,7 +17,9 @@
     "optionVolumeHigh": "High",
     "optionVolumeLow": "Low",
     "optionVolumeMedium": "Medium",
-    "options": "Options"
+    "options": "Options",
+    "menuPlaytest1Option1": "Play with Detection Timer",
+    "menuPlaytest1Option2": "Play without Detection Timer"
   },
   "french": {
     "exit": "Quitter",
@@ -37,6 +39,8 @@
     "optionVolumeHigh": "Fort",
     "optionVolumeLow": "Faible",
     "optionVolumeMedium": "Moyen",
-    "options": "Options"
+    "options": "Options",
+    "menuPlaytest1Option1": "Jouer avec le chrono de détection",
+    "menuPlaytest1Option2": "Jouer sans le chrono de détection"
   }
 }

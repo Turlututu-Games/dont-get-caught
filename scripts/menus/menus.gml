@@ -141,7 +141,7 @@ function Menu(_options = []) constructor {
 			}
 			
 			if(_sprite) {
-				self.sprite(_params, _i, _sprite);
+				self.drawSprite(_params, _i, _sprite);
 			}
 
 			if (_shadow) {
@@ -321,8 +321,12 @@ function Menu(_options = []) constructor {
 			}
 		
 	};
-		
-	static sprite = function(_params, _index, _sprite) {
+	
+	/// @func Draw sprite
+	/// @param {Struct} _params
+	/// @param {Real} _index
+	/// @param {Asset.GMSprite} _sprite
+	static drawSprite = function(_params, _index, _sprite) {
 		
 			var _x1 = _params.x1;
 			var _x2 = _params.x2;
