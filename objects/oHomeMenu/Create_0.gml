@@ -61,3 +61,5 @@ menu = new Menu(_menu);
 playMusic(musicMenu, 0.2)
 
 version = string_concat("v",GM_version," (",date_date_string(GM_build_date),")")
+
+richPresenceSet = false;

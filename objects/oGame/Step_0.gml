@@ -21,6 +21,21 @@ if(cooldownCommand == 0) {
 
 steam_update();
 
+if (!global.steamIsReady && steam_initialised()) {
+	var _steamStatReady = steam_stats_ready();
+		
+	if (_steamStatReady) {
+	    global.steamIsReady = true;
+		show_debug_message("Steam is ready: {0}", global.steamIsReady);
+	}
+}
+
+if(gameIsReady) {
+	gameIsReady = false;
+	show_debug_message("Game is ready. Steam: {0}", global.steamIsReady);
+	room_goto(rMenu);	
+}
+
 if(global.mouseCursor != cursorDisplayed) {
 	cursor_sprite = global.mouseCursor ? cr_arrow : cr_none;
 	cursorDisplayed = global.mouseCursor;

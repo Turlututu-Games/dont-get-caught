@@ -94,15 +94,25 @@ show_debug_message("Platform: {0}", global.platform);
 
 global.frame = 0;
 
+gameIsReady = false;
+
+global.steamIsReady = false;
+
 
 if(STEAM) {
 	show_debug_message("Will load steam");
 	if (steam_initialised()) {
-		show_debug_message("Game is ready");
-		room_goto(rMenu);
+		
+		gameIsReady = true;
+		
+		if steam_stats_ready() && steam_is_overlay_enabled()
+	    {
+	        global.steamIsReady = true;
+	    }
 	} else {
 		show_debug_message("Steam is not ready");
 	}
 } else {
-	room_goto(rMenu);
+	gameIsReady = true;
+	
 }
