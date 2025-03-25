@@ -4,6 +4,7 @@ function resetTexts() {
 	
 	draw_set_alpha(1.0);	
 	draw_set_color(c_white);
+	draw_set_font(fMenu);
 }
 
 function textsDrawSetup(_size,_halign, _valign ) {
@@ -69,7 +70,7 @@ function translate(_identifier) {
 	if(_textFragment == undefined) {
 		// Unknown text. Reporting the error, including the current language
 		show_debug_message(
-			"Error 1: unknown text identifier in language.json {0} (lang: {1})",
+			"Error 1: unknown text identifier in language.json \"{0}\" (lang: {1})",
 			_identifier,
 			global.gameOptions.language
 		);

@@ -92,7 +92,7 @@ if(os_browser != browser_not_a_browser) {
 
 show_debug_message("Platform: {0}", global.platform);
 
-frame = 0;
+global.frame = 0;
 
 
 if(STEAM) {

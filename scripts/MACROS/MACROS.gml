@@ -9,6 +9,7 @@
 #macro CAMERA_LAYER "Cameras"
 #macro PLAYER_LAYER "Player"
 #macro INTERRACTIONS_LAYER "Interractions"
+#macro LEVEL_DESIGN_LAYER "LevelDesign"
 #macro COLLISIONS_LAYER "Collisions"
 
 #macro SAVE "Settings/savedata.ini"

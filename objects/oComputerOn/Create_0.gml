@@ -11,7 +11,7 @@ function toggleCamera() {
 		}
 	}
 	playSound(sfxComputerExecute);
-	displayMessage("Camera 4 has been toggled")
+	displayMessage(string(translate("computerOnOffCameraToggled"), 4))
 }
 
 function useComputer() {

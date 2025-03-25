@@ -7,7 +7,15 @@ var _startY = global.windowHeight * 0.5
 var _size = 68;// 48;
 
 // draw_set_halign(fa_right);
-menu.render(_startX/* - 20*/, _startY, _size, false, true, false, false, c_black);
+menu.render(
+	_startX/* - 20*/,
+	_startY,
+	_size, // size
+	false, // shadow
+	true, // mouse
+	DEBUG, // box
+	false // cursor
+);
 draw_set_halign(fa_left);
 
 for (var _i = 0; _i < array_length(displayOptions); _i++) {

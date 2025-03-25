@@ -27,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"sTutoKeepMoving",
-    "path":"sprites/sTutoKeepMoving/sTutoKeepMoving.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":false,
 }

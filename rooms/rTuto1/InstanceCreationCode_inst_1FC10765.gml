@@ -1,1 +1,1 @@
-_inputs = ["tutoUse", InputType.NEXT_CAMERA, "tutoAnd", InputType.PREVIOUS_CAMERA];
+_inputs = ["tutoMove"];

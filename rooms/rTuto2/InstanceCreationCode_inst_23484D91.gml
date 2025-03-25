@@ -1,1 +1,1 @@
-_inputs = ["tutoPress", InputType.DOWN];
+_inputs = ["tutoFall"];

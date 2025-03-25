@@ -5,9 +5,9 @@ global.debugVariables = [
 
 
 if(DEBUG) {
-	frame++;
-	if(frame >= game_get_speed(gamespeed_fps)) {
-		frame = 0;	
+	global.frame++;
+	if(global.frame >= game_get_speed(gamespeed_fps)) {
+		global.frame = 0;	
 	}
 }
 
@@ -28,7 +28,7 @@ if(_windowWidth != global.windowWidth || _windowHeight != global.windowHeight) {
 }
 
 addDebugVariable("fps", game_get_speed(gamespeed_fps))
-addDebugVariable("frame", frame);
+addDebugVariable("frame", global.frame);
 
 addDebugVariable("windowHeight", global.windowHeight)
 addDebugVariable("windowWidth", global.windowWidth)

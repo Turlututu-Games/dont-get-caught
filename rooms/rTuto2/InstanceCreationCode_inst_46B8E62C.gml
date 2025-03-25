@@ -1,1 +1,1 @@
-_inputs = ["tutoPress", InputType.USE, "tutoOr", InputType.JUMP];
+_inputs = ["tutoRope"];

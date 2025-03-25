@@ -1,1 +1,1 @@
-_inputs = ["tutoFall"];
+_inputs = ["tutoReset1"];

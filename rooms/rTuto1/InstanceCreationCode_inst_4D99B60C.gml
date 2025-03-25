@@ -1,1 +1,1 @@
-_inputs = ["tutoMove"];
+_inputs = [InputType.LEFT, "tutoAnd", InputType.RIGHT];

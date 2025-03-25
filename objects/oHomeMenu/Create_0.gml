@@ -15,12 +15,18 @@ var _startDemo = function() {
 
 var _playtest1Option1 = function() {
 	global.gameOptions.detectionTimer = true;
-	_startDemo();
+	playSound(sfxStartGame)
+	playMusic(musicMusicLevel, 0.2)
+	slideTransition(Transition.GOTO, rTuto1); 
+	global.allowPause = true;
 }
 
 var _playtest1Option2 = function() {
 	global.gameOptions.detectionTimer = false;
-	_startDemo();
+	playSound(sfxStartGame)
+	playMusic(musicMusicLevel, 0.2)
+	slideTransition(Transition.GOTO, rTuto1); 
+	global.allowPause = true;
 }
 
 

@@ -44,7 +44,7 @@ function Menu(_options = []) constructor {
 	filtered = false;
 	overrideSize = undefined;
 
-	static step = function(_upPressed, _downPressed) {
+	static step = function() {
 		if (!self.filtered) {
 			self.filter();
 		}
@@ -53,7 +53,7 @@ function Menu(_options = []) constructor {
 			return;
 		}
 
-		self.optionSelected += _downPressed - _upPressed;
+		self.optionSelected +=  global.inputs.downMenu - global.inputs.upMenu;
 
 		if (self.optionSelected >= array_length(self.options)) {
 			self.optionSelected = 0;
@@ -65,29 +65,29 @@ function Menu(_options = []) constructor {
 
 		var _selected = self.options[self.optionSelected];
 
-		if (_downPressed || _upPressed) {
+		if (global.inputs.downMenu || global.inputs.upMenu) {
 			playSound(_selected.option.sound, 0.3);
 		}
 	};
 
 	/// @func Menu Render
-	/// @param {Real} _startX The starting position of the menu
-	/// @param {Real} _startY The starting position of the menu
-	/// @param {Real} _size The starting position of the menu
-	/// @param {Bool} _shadow The starting position of the menu
-	/// @param {Bool} _enableMouse The starting position of the menu
-	/// @param {Bool} _enableBox The starting position of the menu
-	/// @param {Bool} _cursors The starting position of the menu
-	/// @param {Constant.Color} _color The starting position of the menu
-	/// @param {Asset.GMSprite} _sprite The starting position of the menu
-	/// @param {Real} _yOffsets The starting position of the menu
-	static render = function(_startX, _startY, _size, _shadow = false, _enableMouse = true, _enableBox = true, _cursors = true, _color = c_white, _sprite = undefined, _yOffsets = undefined) {
+	/// @param {Real} _startX The horizontal starting position
+	/// @param {Real} _startY The vertical starting position
+	/// @param {Real} _size The font size to use
+	/// @param {Bool} [_shadow] display shadow under the text ? (default: false)
+	/// @param {Bool} [_enableMouse] Allow mouse to navigate ? (default: true)
+	/// @param {Bool} [_enableBox] If mouse is allowed, display a bounding box on items ? (default: false)
+	/// @param {Bool} [_cursors] Display cursor before and after selected option ? (default: true)
+	/// @param {Constant.Color} [_color] Font color (default: c_white)
+	/// @param {Asset.GMSprite} [_sprite] Display a sprite under menu item ? (default: undefined)
+	static render = function(_startX, _startY, _size, _shadow = false, _enableMouse = true, _enableBox = false, _cursors = true, _color = c_white, _sprite = undefined) {
 		if (!self.filtered) {
 			self.filter();
 		}
 		
 		var _initial_valign = draw_get_valign();
-		var _initial_halign = draw_get_halign();				
+		var _initial_halign = draw_get_halign();	
+		
 
 		for (var _i = 0; _i < array_length(self.options); _i++) {
 			var _print = "";
@@ -131,6 +131,7 @@ function Menu(_options = []) constructor {
 			}				
 			
 			var _params = {};
+		
 			
 			if(_enableMouse || _sprite) {
 				_params = self.boundingBox(_offset_x, _offset_y, _size, _print, _current.option.doubleWidth, _current.option.minimalWidth);
@@ -156,9 +157,9 @@ function Menu(_options = []) constructor {
 			
 			var _offset_text_y = _offset_y;
 			
-			if(_yOffsets) {
+			//if(_yOffsets) {
 				//_offset_text_y += (_i == self.optionSelected) ? _yOffsets[0] : _yOffsets[1];
-			}
+			//}
 
 			draw_text(_offset_x, _offset_y, _print);
 			draw_set_alpha(1.0);
@@ -247,78 +248,32 @@ function Menu(_options = []) constructor {
 			var _y2 = _params.y2;
 
 
-			/*var _width = max(_minimalWidth, string_width(_print));
-			var _height = string_height(_print);
-			
-			var _halign = draw_get_halign();
-			var _valign = draw_get_valign();
-
-
-			var _x1 = _startX;
-			var _x2 = _startX;
-			var _y1 = _offset_y;
-			var _y2 = _offset_y;
-
-			switch (_halign) {
-				case fa_left:
-					_x2 += _width;
-					if(_doubleWidth) {
-						_x1 -= _width;	
-					}
-					break;
-				case fa_center:
-					_x1 -= (_width * 0.5) * (_doubleWidth ? 2 : 1);
-					_x2 += (_width * 0.5) * (_doubleWidth ? 2 : 1);
-					break;
-				case fa_right:
-					_x1 -= _width;
-					if(_doubleWidth) {
-						_x2 += _width;	
-					}
-					
-			}
-
-			switch (_valign) {
-				case fa_top:
-					_y2 += _height;
-					break;
-				case fa_middle:
-					_y1 -= _height * 0.5;
-					_y2 += _height * 0.5;
-					break;
-				case fa_bottom:
-					_y1 -= _height;
-					break;
-			}
-
-			// show_debug_message({_halign, _valign});
-			var _rectange_offset = _size / 10;
-			_x1 -= _rectange_offset;
-			_y1 -= _rectange_offset;
-			_x2 += _rectange_offset;
-			_y2 += _rectange_offset;*/
-
 			if(_enableBox) {
 				draw_set_color(c_black);
 				draw_rectangle(_x1, _y1, _x2, _y2, true);
 			}
-			
 
-
-			//show_debug_message({mouse_x, mouse_y, _x1, _y1, _x2, _y2});
 
 			if (point_in_rectangle(window_mouse_get_x(), window_mouse_get_y(), _x1, _y1, _x2, _y2)) {
+				
+				
 				if(self.optionSelected != _index) {
 					self.optionSelected = _index;
 					var _selected = self.options[self.optionSelected];
+
 					playSound(_selected.option.sound, 0.3);
 				}
 				
-				if(mouse_check_button_pressed(mb_left)) {
+				if(global.inputs.clickMenu) {
 					self.execute();
-					global.pause = false; // Ensure pause is removed
+					if(global.pause) {
+						global.pause = false; // Ensure pause is removed
+					}
 				}
+				
 			}
+			
+		return false;
 		
 	};
 	

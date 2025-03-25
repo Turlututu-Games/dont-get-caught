@@ -1,1 +1,1 @@
-_inputs = ["tutoPress", InputType.RESTART];
+_inputs = ["tutoReset2"];

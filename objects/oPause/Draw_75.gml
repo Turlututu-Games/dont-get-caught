@@ -13,7 +13,14 @@ if(global.pause) {
 	
 	draw_set_font(fMenu48);
 	
-	global.pauseMenu.render(global.windowWidth * 0.5, global.windowHeight * 0.5, 48);
+	global.pauseMenu.render(
+		global.windowWidth * 0.5, 
+		global.windowHeight * 0.5, 
+		48 * 2,
+		false,
+		true,
+		DEBUG
+	);
 	
 	/*if(global.pauseOptions != undefined) {
 		for(var _i = 0; _i < array_length(global.pauseOptions); _i++) {

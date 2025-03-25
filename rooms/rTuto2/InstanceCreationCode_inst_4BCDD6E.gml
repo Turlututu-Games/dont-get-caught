@@ -1,1 +1,1 @@
-_inputs = ["tutoPress", InputType.JUMP, "tutoJump"];
+_inputs = ["tutoPress", InputType.USE, "tutoInterract"];

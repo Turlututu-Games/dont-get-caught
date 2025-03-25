@@ -1,7 +1,7 @@
 functionToCall = function() {
 	if(!instance_exists(oFloatingTextBox)) {
 		with(instance_create_layer(x, y - 64, layer, oFloatingTextBox)) {
-			text = "End of demo";
+			text = translate("endOfDemo");
 			length = string_length(text);
 		}
 	}

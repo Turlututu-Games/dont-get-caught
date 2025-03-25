@@ -1,4 +1,4 @@
-menu.step(global.inputs.upMenu, global.inputs.downMenu);
+menu.step();
 
 if(global.inputs.validateMenu) {
  menu.execute();
