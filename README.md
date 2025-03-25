@@ -11,17 +11,18 @@ You control a character in a side-plateformer. You also control the security cam
 Each levels had some alarm running, and beining detected reset the level. Beware, some camera increase quickly the detection time!
 
 # Controls:
-- `Left Arrow`, `A` or `Q` for walking to left
+- `Left Arrow` or `A` for walking to left
 - `Right Arrow` or `D` for walking to right
 - `Space` for jumping
-- `Up Arrow`, `W` or `Z` for climbing ladder
+- `Up Arrow` or `W` for climbing ladder
 - `Down Arrow` or `S` for descending a ladder or a rope
-- `Shift` for using a computer
-- `Shift`, `Up Arrow`, `W` or `Z` for using a rope
+- `E` for using a computer
+- `E`, `Up Arrow` or `W` for using a rope
 - `R` to restart the level
 - `Ctrl + F` to toggle fullscreen
 - `Escape` to display menu
-- Mouse's `Left Click` and `Right Click` for switching cameras
+- `Shift` to switch to next camera
+- `Control` to switch to previous camera
 
 ## Engine & Assets
 The game use GameMaker Studio 2.3, and my assets has been created with Gimp
@@ -36,10 +37,5 @@ The game use GameMaker Studio 2.3, and my assets has been created with Gimp
 - TV Frame : https://pngimg.com/download/39242
 
 ## Roadmap
-- More levels. I expect to add ~10 levels for the first version
+- More levels.
 - Upgraded assets. Some assets must be upgraded, and more animation frame must be added to the character
-- The camera / viewport system must be reworked, as the current system are not synced with camera change. Because of that, switching to offline camera show the level for one frame
-- Adding options menu:
-  - switching between keyboards (maybe with remapping keys for specific layouts)
-  - language switch (french or english)
-  - fullscreen toggle
