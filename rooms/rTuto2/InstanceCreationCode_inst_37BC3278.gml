@@ -1,0 +1,1 @@
+_inputs = ["tutoPress", InputType.UP, "tutoClimb"];
