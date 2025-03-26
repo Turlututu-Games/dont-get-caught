@@ -41,10 +41,24 @@ _move = _inputRight - _inputLeft; // Calculate movement.
 _touchingFloor = place_meeting(x, y+1, [oWall, collisionMap]);
 _onLadder = place_meeting(x, y, oLadder);
 _onTopLadder = place_meeting(x, y+1, oLadder);
+_onLadderBottom = place_meeting(x, y+walkSpeed, oLadder);
 _canTakeRope = place_meeting(x, y-16, oRope);
 _canUseComputer = place_meeting(x, y+1, oComputer);
 
-var _affectedByGravity = !(_onTopLadder || onRope); // Indicate if the gravity must be active (not active in ladder and rope)
+//_affectedByGravity = !(_onTopLadder || onRope); // Indicate if the gravity must be active (not active in ladder and rope)
+
+if(previousState == ActionStates.CLIMB && _onLadder == false && _inputUp && _onLadderBottom) {
+	// Temporary fix for the ladder issue
+	y = round(y - 1);
+
+	_onTopLadder = true;
+	state = ActionStates.WALK;
+	
+}
+
+var _onRopeOrLadder = _onTopLadder || onRope;
+
+_affectedByGravity = !(_onRopeOrLadder); // Indicate if the gravity must be active (not active in ladder and rope)
 
 var _offsetMeetingY = 0;
 
@@ -111,6 +125,14 @@ if(_onLadder) {
 }
 
 if(_onTopLadder) {
+	if(_inputDown) {
+		verticalSpeed = walkSpeed;	
+	} else {
+		verticalSpeed = 0;
+	}	
+}
+
+if(_onLadder) {
 	if(_inputUp) {
 		verticalSpeed = -walkSpeed;	
 	} else if(_inputDown) {

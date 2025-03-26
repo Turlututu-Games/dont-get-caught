@@ -17,7 +17,7 @@ var _playtest1Option1 = function() {
 	global.gameOptions.detectionTimer = true;
 	playSound(sfxStartGame)
 	playMusic(musicMusicLevel, 0.2)
-	slideTransition(Transition.GOTO, rTuto1); 
+	slideTransition(Transition.GOTO, rTuto1);
 	global.allowPause = true;
 }
 
@@ -25,13 +25,13 @@ var _playtest1Option2 = function() {
 	global.gameOptions.detectionTimer = false;
 	playSound(sfxStartGame)
 	playMusic(musicMusicLevel, 0.2)
-	slideTransition(Transition.GOTO, rTuto1); 
+	slideTransition(Transition.GOTO, rTuto1);
 	global.allowPause = true;
 }
 
 
 var _debugRooms = function() {
-
+	slideTransition(Transition.GOTO, rDebugMenu); 
 };
 
 var _options = function() {

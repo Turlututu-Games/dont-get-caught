@@ -1,13 +1,105 @@
 /// @function drawSetText(colour, font, halign, valign)
-/// @param colour Text colour
-/// @param font Text colour
-/// @param halign Text horizontal alignment
-/// @param valign Text vertical alignment
-function drawSetText(colour, font, halign, valign){
+/// @param {Constant.Color} colour Text colour
+/// @param {Asset.GMFont} font Text colour
+/// @param {Constant.HAlign} halign Text horizontal alignment
+/// @param {Constant.VAlign} valign Text vertical alignment
+/// @param {Real} [alpha] Text alpha
+function drawSetText(colour, font, halign, valign, alpha){
 	draw_set_color(colour);
 	draw_set_font(font);
 	draw_set_halign(halign);
 	draw_set_valign(valign);
+	if(alpha != undefined) {
+		draw_set_alpha(alpha)
+	}
+	
+}
+
+/// @function drawTextGUI(x, y, text, [colour], [font], [halign], [valign], [alpha])
+/// @param {Real} x Horizontal position
+/// @param {Real} y Vertical position
+/// @param {String} text Text to display
+/// @param {Constant.Color,Undefined} [colour] Text colour
+/// @param {Asset.GMFont,Undefined} [font] Text font
+/// @param {Constant.HAlign,Undefined} [halign] Text horizontal alignment
+/// @param {Constant.VAlign,Undefined} [valign] Text vertical alignment
+/// @param {Real,Undefined} [alpha] Text alpha
+/// @param {Real,Undefined} [angle] Text angle
+function drawTextGUI(x, y, text, colour, font, halign, valign, alpha, angle = 0) {
+	
+	var _initialColour = undefined;
+	var _initialFont = undefined;
+	var _initialHAlign = undefined;
+	var _initialVAlign = undefined;
+	var _initialAlpha = undefined;
+			
+	if(colour != undefined) {
+		_initialColour = draw_get_color();
+		if(_initialColour != colour) {
+			draw_set_color(colour);
+		} else {
+			_initialColour = undefined;
+		}
+	}
+	
+	if(font != undefined) {
+		_initialFont = draw_get_font();
+		if(_initialFont != font) {
+			draw_set_font(font);
+		} else {
+			_initialFont = undefined;
+		}
+	}
+	
+	if(halign != undefined) {
+		_initialHAlign = draw_get_halign();
+		if(_initialHAlign != halign) {
+			draw_set_halign(halign);
+		} else {
+			_initialHAlign = undefined;
+		}
+	}
+	
+	if(valign != undefined) {
+		_initialVAlign = draw_get_valign();
+		if(_initialVAlign != valign) {
+			draw_set_valign(valign);
+		} else {
+			_initialVAlign = undefined;
+		}
+	}
+	
+	if(alpha != undefined) {
+		_initialAlpha = draw_get_alpha();
+		if(_initialAlpha != alpha) {
+			draw_set_alpha(alpha);
+		} else {
+			_initialAlpha = undefined;
+		}
+	}
+	
+	draw_text_transformed(x, y, text, global.windowSizeRatio, global.windowSizeRatio, angle);
+	
+	if(_initialColour != undefined) {
+		draw_set_color(_initialColour);
+	}
+	
+	if(_initialFont != undefined) {
+		draw_set_font(_initialFont);
+	}
+	
+	if(_initialHAlign != undefined) {
+		draw_set_halign(_initialHAlign);
+	}
+	
+	if(_initialVAlign != undefined) {
+		draw_set_valign(_initialVAlign);
+	}
+	
+	if(_initialAlpha != undefined) {
+		draw_set_alpha(_initialAlpha);
+	}
+	
 }
 
 drawTextAndSpriteMap = ds_map_create();
@@ -18,14 +110,14 @@ function prepareDrawTextAndSprite(_arrayLength, _textAndSpriteArray) {
 	
 	var _fontHeight = string_height(" ");
 	
-	show_debug_message("prepareDrawTextAndSprite for array with length {0}", _arrayLength);
+	// show_debug_message("prepareDrawTextAndSprite for array with length {0}", _arrayLength);
 	
 	for(var index = 0; index < _arrayLength; index++) {
 		var _value = _textAndSpriteArray[index];
 		
 		var isSprite = is_handle(_value);
 		
-		show_debug_message("value[{0}]: [isString: {1}, isNum: {2}, isHandle: {3}]", index, is_string(_value), is_numeric(_value), is_handle(_value));
+		// show_debug_message("value[{0}]: [isString: {1}, isNum: {2}, isHandle: {3}]", index, is_string(_value), is_numeric(_value), is_handle(_value));
 		
 		if (is_string(_value))
 		{

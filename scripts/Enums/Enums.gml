@@ -14,6 +14,14 @@ enum CameraStatus {
 	JAMMED,
 }
 
+enum CameraType {
+	STANDARD,
+	DETECTION,
+	INFRARED,
+	SOUND,
+	MOVING,
+}
+
 enum Platforms {
 	BROWSER = 0,
 	WINDOWS = 1,

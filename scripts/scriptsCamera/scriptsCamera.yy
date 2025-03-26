@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"drawSetText",
+  "%Name":"scriptsCamera",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"drawSetText",
+  "name":"scriptsCamera",
   "parent":{
-    "name":"GUI",
-    "path":"folders/Scripts/GUI.yy",
+    "name":"Entities",
+    "path":"folders/Scripts/Entities.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

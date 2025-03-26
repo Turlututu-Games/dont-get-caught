@@ -8,6 +8,8 @@ yTo = ystart;
 first = false;
 
 
+cameraType = CameraType.STANDARD;
+cameraName = "";
 
 status = CameraStatus.ACTIVE;
 cameraDetectionSpeed = 0;

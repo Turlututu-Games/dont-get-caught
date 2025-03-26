@@ -1,0 +1,1 @@
+cameraName = getCameraText(cameraType);

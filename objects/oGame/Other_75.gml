@@ -1,4 +1,5 @@
 /// @description Manage System events
+show_debug_message("System event type: {0}", async_load[? "event_type"])
 
 var _gamepad = async_load[? "pad_index"];
 

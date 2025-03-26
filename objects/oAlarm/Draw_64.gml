@@ -34,7 +34,7 @@ addDebugVariable("alarmTimerInitial", alarmTimerInitial);
 		_mainHeight - _barHeight // y
 	);
 
-	drawSetText(c_white, fMenu, fa_left, fa_bottom);
+	scriptsText(c_white, fMenu, fa_left, fa_bottom);
 	if(_displayAlarm) {
 		draw_text(
 			_mainWidth + _offsetText, // x

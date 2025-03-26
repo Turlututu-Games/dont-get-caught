@@ -118,13 +118,13 @@ function Menu(_options = []) constructor {
 				_offset_y += _current.option.offsetY;	
 			}	
 			
-			if(_current.option.halign) {
+			if(_current.option.halign != undefined) {
 				draw_set_halign(_current.option.halign);
 			} else {
 				draw_set_halign(_initial_halign);
 			}
 			
-			if(_current.option.valign) {
+			if(_current.option.valign != undefined) {
 				draw_set_valign(_current.option.valign);
 			} else {
 				draw_set_valign(_initial_valign);
@@ -373,8 +373,8 @@ function getMenuSizes() {
 	var _menuY = global.windowHeight - _guiYMargin;
 	var _menuXTarget = global.windowWidth - _guiXMargin;	
 	
-	addDebugVariable("_menuX", _menuX);
-	addDebugVariable("_menuY", _menuY);
+	//addDebugVariable("_menuX", _menuX);
+	//addDebugVariable("_menuY", _menuY);
 	
 	return {
 		guiXMargin: _guiXMargin,

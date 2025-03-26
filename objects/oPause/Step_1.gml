@@ -10,4 +10,4 @@ if(global.pause != previousState) {
 	global.pauseToggle = false;	
 }
 
-addDebugVariable("global.pause", global.pause);
+// addDebugVariable("global.pause", global.pause);

@@ -5,4 +5,14 @@ functionToCall = function() {
 	
 }
 
+functionToCallOnStep = function() {
+	
+}
+
+functionToCallOnDraw = function() {
+	
+}
+
+store = undefined
+
 triggered = false;

@@ -21,6 +21,14 @@ if(_windowWidth != global.windowWidth || _windowHeight != global.windowHeight) {
 	global.windowHeight = window_get_height();
 	global.windowWidth = global.windowHeight * 1.77777777;
 	
+	
+	if(global.windowSizeRatio == -1) {
+		global.windowSizeRatio = 1;	
+		_initialHeight = global.windowHeight;
+	} else {
+		global.windowSizeRatio = global.windowHeight / _initialHeight;
+	}
+	
 	// 1.777777778
 	
 	// window_set_size(global.windowWidth, global.windowHeight);
@@ -29,8 +37,9 @@ if(_windowWidth != global.windowWidth || _windowHeight != global.windowHeight) {
 
 addDebugVariable("fps", game_get_speed(gamespeed_fps))
 addDebugVariable("frame", global.frame);
+addDebugVariable("windowRatio", global.windowSizeRatio);
 
-addDebugVariable("windowHeight", global.windowHeight)
-addDebugVariable("windowWidth", global.windowWidth)
+//addDebugVariable("windowHeight", global.windowHeight)
+//addDebugVariable("windowWidth", global.windowWidth)
 
-addDebugVariable("build_date",  date_date_string(GM_build_date))
+// addDebugVariable("build_date",  date_date_string(GM_build_date))
