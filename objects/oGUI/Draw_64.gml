@@ -1,8 +1,6 @@
 
 var _running = !global.pause && image_speed != 0;
 
-show_debug_message("!global.pause: {0}, image_speed: {1}. Result: {2}", !global.pause, image_speed != 0, _running);
-
 if(_running) {
 	
 	animationFrame = 0;

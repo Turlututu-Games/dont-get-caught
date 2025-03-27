@@ -250,7 +250,7 @@ function prepareDrawTextAndSprite(_arrayLength, _textAndSpriteArray) {
 	
 	var _fontHeight = string_height(" ");
 	
-	// show_debug_message("prepareDrawTextAndSprite for array with length {0}", _arrayLength);
+	show_debug_message("prepareDrawTextAndSprite for array with length {0}", _arrayLength);
 	
 	for(var index = 0; index < _arrayLength; index++) {
 		var _value = _textAndSpriteArray[index];
