@@ -2,9 +2,9 @@
   "$GMSprite":"",
   "%Name":"sCameraOverlaySmall",
   "bboxMode":0,
-  "bbox_bottom":99,
+  "bbox_bottom":359,
   "bbox_left":0,
-  "bbox_right":99,
+  "bbox_right":479,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,15 +12,15 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"cabf9f1a-e22d-48d2-bece-a65e18053df1","name":"cabf9f1a-e22d-48d2-bece-a65e18053df1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"04ddff25-b119-41ce-8f82-da15e94dc246","name":"04ddff25-b119-41ce-8f82-da15e94dc246","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"5dab687a-4aec-4ca2-bb4b-4e20352a0782","name":"5dab687a-4aec-4ca2-bb4b-4e20352a0782","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"7ef9ae3c-f1b1-4c91-a33b-94d3a43b5a50","name":"7ef9ae3c-f1b1-4c91-a33b-94d3a43b5a50","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
-  "height":100,
+  "height":360,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"5fdd0b58-701c-4419-9a0b-591302170565","blendMode":0,"displayName":"default","isLocked":false,"name":"5fdd0b58-701c-4419-9a0b-591302170565","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"f208f8b4-7bf0-4cef-9892-4bf60d0bdcf5","blendMode":0,"displayName":"default","isLocked":false,"name":"f208f8b4-7bf0-4cef-9892-4bf60d0bdcf5","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"sCameraOverlaySmall",
   "nineSlice":null,
@@ -70,11 +70,11 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"cabf9f1a-e22d-48d2-bece-a65e18053df1","path":"sprites/sCameraOverlaySmall/sCameraOverlaySmall.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"1ef30f61-772d-438b-8110-bd22577cc3a5","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5dab687a-4aec-4ca2-bb4b-4e20352a0782","path":"sprites/sCameraOverlaySmall/sCameraOverlaySmall.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"53e76eed-4d74-44ad-9ad3-04e73b8b9f64","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"04ddff25-b119-41ce-8f82-da15e94dc246","path":"sprites/sCameraOverlaySmall/sCameraOverlaySmall.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"e8e2c6bf-bf9f-427e-a9df-fed0a02cecd2","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7ef9ae3c-f1b1-4c91-a33b-94d3a43b5a50","path":"sprites/sCameraOverlaySmall/sCameraOverlaySmall.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"a2f7dbf7-b050-4d0f-9b73-32794666147c","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
@@ -90,5 +90,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":100,
+  "width":480,
 }

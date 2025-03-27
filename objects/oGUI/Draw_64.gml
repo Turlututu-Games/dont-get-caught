@@ -33,6 +33,20 @@ with(oPlayer) {
 	if(other.currentCameraBuffer != -1) {
 		
 		var activeCameraObject = currentCamerasObject[other.currentCameraBuffer];
+		
+		var _textPositionX = _mainWidth * 0.5;// window_mouse_get_x(); // 100
+		//var _textPositionX = window_mouse_get_x(); // 100
+		var _textPositionY = _sideHeight / 3;// window_mouse_get_y(); // 100
+		//var _textPositionY = window_mouse_get_y(); 
+		
+		//var _previousAlpha = draw_get_alpha();
+		//drawSetText(c_white, fMenu28, fa_left, fa_middle, 0.2);
+		
+		// var _angle = point_direction(_textPositionX, _textPositionY,window_mouse_get_x(), window_mouse_get_y());
+				
+				
+		drawTextGUI(_textPositionX, _textPositionY, string(activeCameraObject.cameraName, other.currentCameraBuffer + 1), TextColor.LIGHT, TextSize.MAIN_LABEL, TextAlign.CENTER, false, 0.2);
+					
 	
 		if(activeCameraObject.status == CameraStatus.ACTIVE) {
 			draw_sprite_stretched(sCameraOverlay, other.animationFrame, 0, 0, _mainWidth, _mainHeight);
@@ -45,19 +59,7 @@ with(oPlayer) {
 		//var _textPositionX = _mainWidth / 20;
 		//var _textPositionY = _mainHeight / 20;
 		
-		var _textPositionX =_sideWidth * 0.75;// window_mouse_get_x(); // 100
-		var _textPositionY = global.windowHeight - _sideHeight ;// window_mouse_get_y(); // 100
-		
-		//var _previousAlpha = draw_get_alpha();
-		//drawSetText(c_white, fMenu28, fa_left, fa_middle, 0.2);
-		
-		// var _angle = point_direction(_textPositionX, _textPositionY,window_mouse_get_x(), window_mouse_get_y());
-				
-				
-		// show_debug_message("draw_text {0} / {1} : {2}", _textPositionX, _textPositionY, string(activeCameraObject.cameraName,  other.currentCameraBuffer));
-	
-		drawTextGUI(_textPositionX, _textPositionY, string(activeCameraObject.cameraName, other.currentCameraBuffer + 1), TextColor.LIGHT, TextSize.MAIN_LABEL, TextAlign.LEFT, 0.2, 357);
-	
+
 		//draw_text_transformed(_textPositionX, _textPositionY, string(activeCameraObject.cameraName, other.currentCameraBuffer), 1, 1, 357);
 	
 		//draw_set_alpha(_previousAlpha);
