@@ -5,19 +5,7 @@ function debugGUI(element, index)
 	var text = name + ": " + string(value);
 	var position = (index * 20) + 40;
 	
-	draw_set_halign(fa_left);
-	draw_set_valign(fa_bottom);
-
-	draw_set_alpha(0.7);
-
-	draw_set_color(c_black);
-	draw_text(40, position + 2, text);
-	
-	draw_set_alpha(1);
-	
-	draw_set_color(c_white);	
-
-	draw_text(40,position, text);
+	drawTextGUITemplate(40, position + 2, text, TextTemplate.STANDARD_SHADOW);
 }
 
 /// @func addDebugVariable(name, value) Add a variable to the debug output for the current step

@@ -56,7 +56,7 @@ with(oPlayer) {
 				
 		// show_debug_message("draw_text {0} / {1} : {2}", _textPositionX, _textPositionY, string(activeCameraObject.cameraName,  other.currentCameraBuffer));
 	
-		drawTextGUI(_textPositionX, _textPositionY, string(activeCameraObject.cameraName, other.currentCameraBuffer + 1), c_white, fMenu28, fa_left, fa_middle, 0.2, 357);
+		drawTextGUI(_textPositionX, _textPositionY, string(activeCameraObject.cameraName, other.currentCameraBuffer + 1), TextColor.LIGHT, TextSize.MAIN_LABEL, TextAlign.LEFT, 0.2, 357);
 	
 		//draw_text_transformed(_textPositionX, _textPositionY, string(activeCameraObject.cameraName, other.currentCameraBuffer), 1, 1, 357);
 	

@@ -36,7 +36,6 @@
     {"name":"oKeyBlue","order":3,"path":"objects/oKeyBlue/oKeyBlue.yy",},
     {"name":"oKeyGreen","order":4,"path":"objects/oKeyGreen/oKeyGreen.yy",},
     {"name":"oKeyRed","order":5,"path":"objects/oKeyRed/oKeyRed.yy",},
-    {"name":"oOffline","order":2,"path":"objects/oOffline/oOffline.yy",},
     {"name":"oOptions","order":5,"path":"objects/oOptions/oOptions.yy",},
     {"name":"oPause","order":1,"path":"objects/oPause/oPause.yy",},
     {"name":"oPlayer","order":2,"path":"objects/oPlayer/oPlayer.yy",},

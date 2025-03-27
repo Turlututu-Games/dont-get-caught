@@ -7,9 +7,8 @@ if(global.pause) {
 	draw_set_alpha(0.75);
 	draw_rectangle(0,0,global.windowWidth,global.windowHeight,false);
 	resetTexts();
-	draw_set_font(fMenu72);
 	
-	draw_text(global.windowWidth * 0.5, global.windowHeight * 0.3, "Pause");
+	drawTextGUITemplate(global.windowWidth * 0.5, global.windowHeight * 0.3, translate("Pause"), TextTemplate.MENU_TITLE);
 	
 	draw_set_font(fMenu48);
 	

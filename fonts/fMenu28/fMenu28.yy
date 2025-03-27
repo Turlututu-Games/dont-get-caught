@@ -1177,10 +1177,7 @@
   "sdfSpread":8,
   "size":28.0,
   "styleName":"Regular",
-  "textureGroupId":{
-    "name":"Default",
-    "path":"texturegroups/Default",
-  },
+  "textureGroupId":null,
   "TTFName":"${project_dir}/fonts/fMenu/USSR STENCIL WEBFONT.ttf",
   "usesSDF":false,
 }

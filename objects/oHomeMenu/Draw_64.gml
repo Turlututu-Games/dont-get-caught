@@ -6,6 +6,5 @@ draw_set_font(fMenu);
 
 menu.render(_sizes.menuX, _sizes.menuY, 36, false, true, DEBUG);
 
-textsDrawSetup(24, fa_left, fa_bottom);
+drawTextGUITemplate(0, global.windowHeight, version, TextTemplate.STANDARD)
 
-draw_text(0, global.windowHeight, version);

@@ -36,9 +36,10 @@ addDebugVariable("alarmTimerInitial", alarmTimerInitial);
 
 	drawSetText(c_white, fMenu, fa_left, fa_bottom);
 	if(_displayAlarm) {
-		draw_text(
+		drawTextGUITemplate(
 			_mainWidth + _offsetText, // x
 			_mainHeight - _barHeight, // y
-			"Detection"
-		);
+			translate("cameraDetection"),
+			TextTemplate.STANDARD
+		)
 	}

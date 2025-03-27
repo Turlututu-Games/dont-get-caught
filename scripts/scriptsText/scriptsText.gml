@@ -1,3 +1,75 @@
+drawTextAndSpriteMap = ds_map_create();
+
+enum TextColor {
+	LIGHT,
+	DARK
+}
+
+enum TextSize {
+	TEXT,
+	MAIN_LABEL,
+	LARGE_LABEL,
+	TITLE
+}
+
+enum TextAlign {
+	CENTER,
+	TOP_LEFT,
+	TOP,
+	TOP_RIGHT,
+	LEFT,
+	RIGHT,
+	BOTTOM_LEFT,
+	BOTTOM,
+	BOTTOM_RIGHT,
+}
+
+enum TextTemplate {
+	STANDARD, //: c_white, fMenu, fa_left, fa_bottom, 1
+	STANDARD_SHADOW, //: c_white, fMenu, fa_left, fa_bottom, 1
+	MENU_TITLE //: c_white, fMenu72, fa_center, fa_middle, 1	
+}
+
+/// @function textAlignToAlign(align, fallback)
+/// @param {Struct.TextAlign} align
+function textAlignToAlign(align, fallback = [undefined, undefined]) {
+	switch(align) {
+		case TextAlign.BOTTOM: return [fa_center, fa_bottom];
+		case TextAlign.BOTTOM_LEFT: return [fa_left, fa_bottom];
+		case TextAlign.BOTTOM_RIGHT: return [fa_right, fa_bottom];
+		case TextAlign.CENTER: return [fa_center, fa_middle];
+		case TextAlign.LEFT: return [fa_left, fa_middle];
+		case TextAlign.RIGHT: return [fa_right, fa_middle];
+		case TextAlign.TOP: return [fa_center, fa_top];
+		case TextAlign.TOP_LEFT: return [fa_left, fa_top];
+		case TextAlign.TOP_RIGHT: return [fa_right, fa_top];
+		default: return fallback;
+	}
+}
+
+/// @function textColorToColor(color)
+/// @param {Struct.TextColor} color
+function textColorToColor(color) {
+	switch(color) {
+		case TextColor.DARK: return c_black;
+		case TextColor.LIGHT: return c_white;
+		default: return undefined;
+	}
+}
+
+/// @function textSizeToFont(size)
+/// @param {Struct.TextSize} size
+function textSizeToFont(size) {
+	switch(size) {
+		case TextSize.TEXT: return fMenu;
+		case TextSize.MAIN_LABEL: return fMenu28;
+		case TextSize.LARGE_LABEL: return fMenu48;
+		case TextSize.TITLE: return fMenu72;
+		default: return undefined;
+	}
+}
+
+
 /// @function drawSetText(colour, font, halign, valign)
 /// @param {Constant.Color} colour Text colour
 /// @param {Asset.GMFont} font Text colour
@@ -15,7 +87,8 @@ function drawSetText(colour, font, halign, valign, alpha){
 	
 }
 
-/// @function drawTextGUI(x, y, text, [colour], [font], [halign], [valign], [alpha])
+/// @function _drawTextGUIInternal(ratio, x, y, text, [colour], [font], [halign], [valign], [alpha], [angle])
+/// @param {Real} ratio The display ratio
 /// @param {Real} x Horizontal position
 /// @param {Real} y Vertical position
 /// @param {String} text Text to display
@@ -25,7 +98,7 @@ function drawSetText(colour, font, halign, valign, alpha){
 /// @param {Constant.VAlign,Undefined} [valign] Text vertical alignment
 /// @param {Real,Undefined} [alpha] Text alpha
 /// @param {Real,Undefined} [angle] Text angle
-function drawTextGUI(x, y, text, colour, font, halign, valign, alpha, angle = 0) {
+function _drawTextGUIInternal(ratio, x, y, text, colour, font, halign, valign, alpha, angle = 0) {
 	
 	var _initialColour = undefined;
 	var _initialFont = undefined;
@@ -78,7 +151,7 @@ function drawTextGUI(x, y, text, colour, font, halign, valign, alpha, angle = 0)
 		}
 	}
 	
-	draw_text_transformed(x, y, text, global.windowSizeRatio, global.windowSizeRatio, angle);
+	draw_text_transformed(x, y, text, ratio, ratio, angle);
 	
 	if(_initialColour != undefined) {
 		draw_set_color(_initialColour);
@@ -102,7 +175,74 @@ function drawTextGUI(x, y, text, colour, font, halign, valign, alpha, angle = 0)
 	
 }
 
-drawTextAndSpriteMap = ds_map_create();
+/// @function drawTextGUI(x, y, text, [colour], [size], [align], [shadow], [alpha], [angle])
+/// @param {Real} x Horizontal position
+/// @param {Real} y Vertical position
+/// @param {String} text Text to display
+/// @param {Struct.TextColor,Undefined} [colour] Text colour
+/// @param {Struct.TextSize,Undefined} [size] Text size
+/// @param {Struct.TextAlign,Undefined} [align] Text alignment
+/// @param {Bool,Undefined} [shadow] Text shadow
+/// @param {Real,Undefined} [alpha] Text alpha
+/// @param {Real,Undefined} [angle] Text angle
+function drawTextGUI(x, y, text, colour = undefined, size = undefined, align = undefined, shadow = false, alpha = 1, angle = 0) {
+	var resolvedAlign = textAlignToAlign(align);
+	var _resolveColor = textColorToColor(colour);
+	var _resolveFont = textSizeToFont(size);
+	
+	if(shadow) {
+		var _resolveColorShadow = textColorToColor(TextColor.DARK);
+		_drawTextGUIInternal(global.windowSizeRatio, x, y, text, _resolveColorShadow, _resolveFont, resolvedAlign[0], resolvedAlign[1], alpha - 0.3, angle);
+	}
+	
+	_drawTextGUIInternal(global.windowSizeRatio, x, y, text, _resolveColor, _resolveFont, resolvedAlign[0], resolvedAlign[1], alpha, angle);
+}
+
+/// @function drawTextGUITemplate(x, y, text, template)
+/// @param {Real} x Horizontal position
+/// @param {Real} y Vertical position
+/// @param {String} text Text to display
+/// @param {Struct.TextTemplate} template Text template
+function drawTextGUITemplate(x, y, text, template) {
+	switch(template) {
+		case TextTemplate.MENU_TITLE:
+			drawTextGUI(x, y, text, TextColor.LIGHT, TextSize.TITLE, TextAlign.CENTER, false, 1, 0);
+			break;
+			
+		case TextTemplate.STANDARD_SHADOW:
+			drawTextGUI(x, y, text, TextColor.LIGHT, TextSize.TEXT, TextAlign.BOTTOM_LEFT, true, 1, 0);
+			break;
+		case TextTemplate.STANDARD:
+		default:
+			drawTextGUI(x, y, text, TextColor.LIGHT, TextSize.TEXT, TextAlign.BOTTOM_LEFT, false, 1, 0);
+			break;
+	}
+}
+
+/// @function drawTextInGame(x, y, text, [colour], [size], [align], [shadow], [alpha], [angle])
+/// @param {Real} x Horizontal position
+/// @param {Real} y Vertical position
+/// @param {String} text Text to display
+/// @param {Struct.TextColor,Undefined} [colour] Text colour
+/// @param {Struct.TextSize,Undefined} [size] Text size
+/// @param {Struct.TextAlign,Undefined} [align] Text alignment
+/// @param {Bool,Undefined} [shadow] Text shadow
+/// @param {Real,Undefined} [alpha] Text alpha
+/// @param {Real,Undefined} [angle] Text angle
+function drawTextInGame(x, y, text, colour = undefined, size = undefined, align = undefined, shadow = false, alpha = 1, angle = 0) {
+	var resolvedAlign = textAlignToAlign(align);
+	var _resolveColor = textColorToColor(colour);
+	var _resolveFont = textSizeToFont(size);
+	
+	if(shadow) {
+		var _resolveColorShadow = textColorToColor(TextColor.DARK);
+		_drawTextGUIInternal(1, x, y, text, _resolveColorShadow, _resolveFont, resolvedAlign[0], resolvedAlign[1], alpha - 0.3, angle);
+	}
+	
+	_drawTextGUIInternal(1, x, y, text, _resolveColor, _resolveFont, resolvedAlign[0], resolvedAlign[1], alpha, angle);
+}
+
+
 
 function prepareDrawTextAndSprite(_arrayLength, _textAndSpriteArray) {
 	var _preparedArray = [];
@@ -172,15 +312,18 @@ function prepareDrawTextAndSprite(_arrayLength, _textAndSpriteArray) {
 /// @param {Array<String,Asset.GMSprite>}textAndSpriteArray Array containing text or sprite
 /// @param {Real} x horizontal position
 /// @param {Real} y vertical position
-/// @param {Constant.Color} colour Text colour
-/// @param {Asset.GMFont} font Text colour
-/// @param {Constant.HAlign} halign Text horizontal alignment
-/// @param {Constant.VAlign} valign Text vertical alignment
-function drawTextAndSprite(key, textAndSpriteArray, x, y, colour, font, halign, valign) {
-	draw_set_color(colour);
-	draw_set_font(font);
+/// @param {Struct.TextColor} colour Text colour
+/// @param {Struct.TextSize} size Text size
+/// @param {Struct.TextAlign} align Text alignment
+function drawTextAndSprite(key, textAndSpriteArray, x, y, colour, size, align) {
+	var _resolvedAlign = textAlignToAlign(align, [fa_center, fa_middle]);
+	var _resolveColor = textColorToColor(colour);
+	var _resolveFont = textSizeToFont(size);
+	
+	draw_set_color(_resolveColor);
+	draw_set_font(_resolveFont);
 	draw_set_halign(fa_left);
-	draw_set_valign(valign);
+	draw_set_valign(_resolvedAlign[1]);
 	
 	var _preparedArray = [];
 	var _xOffset = 0;
@@ -203,11 +346,11 @@ function drawTextAndSprite(key, textAndSpriteArray, x, y, colour, font, halign, 
 	var _startX = x;
 	
 
-	if(halign == fa_center) {
+	if(_resolvedAlign[0] == fa_center) {
 		_startX -= (_xOffset * 0.5);
 	}
 	
-	if(halign == fa_right) {
+	if(_resolvedAlign[0] == fa_right) {
 		_startX -= _xOffset;
 	}
 
@@ -220,7 +363,7 @@ function drawTextAndSprite(key, textAndSpriteArray, x, y, colour, font, halign, 
 		if (_value.type == "text")
 		{
 		
-
+			// In-Game text
 		    draw_text(_startX + _value.offset, y, _value.text);
 						
 			
@@ -238,3 +381,4 @@ function drawTextAndSprite(key, textAndSpriteArray, x, y, colour, font, halign, 
 		
 	}
 }
+

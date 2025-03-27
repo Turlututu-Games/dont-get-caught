@@ -92,7 +92,6 @@
     {"id":{"name":"oKeyGreen","path":"objects/oKeyGreen/oKeyGreen.yy",},},
     {"id":{"name":"oKeyRed","path":"objects/oKeyRed/oKeyRed.yy",},},
     {"id":{"name":"oLadder","path":"objects/oLadder/oLadder.yy",},},
-    {"id":{"name":"oOffline","path":"objects/oOffline/oOffline.yy",},},
     {"id":{"name":"oOptions","path":"objects/oOptions/oOptions.yy",},},
     {"id":{"name":"oPause","path":"objects/oPause/oPause.yy",},},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},},

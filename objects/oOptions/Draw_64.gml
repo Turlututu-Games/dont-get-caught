@@ -45,9 +45,10 @@ for (var _i = 0; _i < array_length(displayOptions); _i++) {
 			
 			var _offsetY = _startY + (_i * _size);
 			
-			draw_set_alpha(_opacity);
-			draw_set_color(c_black);
+			//draw_set_alpha(_opacity);
+			//draw_set_color(c_black);
 
-			draw_text(_startX + 20, _offsetY, _print);
-			draw_set_alpha(1.0);
+			drawTextGUI(_startX + 20, _offsetY, _print, TextColor.LIGHT, TextSize.TEXT, TextAlign.LEFT, false, _opacity);
+			//draw_text(_startX + 20, _offsetY, _print);
+			//draw_set_alpha(1.0);
 		}

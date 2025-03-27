@@ -25,9 +25,6 @@ draw_rectangle(
 	center + halfWidth + textboxBorder,
 	center,
 	false);
-// draw_sprite(sTriangle, 0, x, y);
-draw_set_alpha(1);
 
 // Draw the Text
-drawSetText(c_white, fMenu, fa_center, fa_top);
-draw_text(center, center - textboxHeight - textboxBorder, textCurrent);
+drawTextInGame(center, center - textboxHeight - textboxBorder, textCurrent, TextColor.LIGHT, TextSize.TEXT, TextAlign.TOP, true, 1);

@@ -50,9 +50,3 @@ enum OptionsProperties {
 	SELECTED,
 	VALUES
 }
-
-enum FontSize {
-	SMALL,
-	MEDIUM,
-	LARGE
-}
