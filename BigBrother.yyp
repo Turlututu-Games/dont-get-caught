@@ -116,6 +116,7 @@
     {"id":{"name":"oPause","path":"objects/oPause/oPause.yy",},},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},},
     {"id":{"name":"oRope","path":"objects/oRope/oRope.yy",},},
+    {"id":{"name":"oSetup","path":"objects/oSetup/oSetup.yy",},},
     {"id":{"name":"oStep","path":"objects/oStep/oStep.yy",},},
     {"id":{"name":"oTransition","path":"objects/oTransition/oTransition.yy",},},
     {"id":{"name":"oTrigger","path":"objects/oTrigger/oTrigger.yy",},},

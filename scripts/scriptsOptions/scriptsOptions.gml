@@ -1,10 +1,65 @@
-function writeOptionsConfig() {
+function readOptionsConfig() {
+	
+	if(STEAM && global.steamIsReady) {
+		if steam_file_exists(SAVE_STEAM)
+		{
+			
+			show_debug_message("Read options from Steam Cloud");
+			
+		    save_str = steam_file_read(SAVE_STEAM);
+			
+			ini_open_from_string(save_str);
+			var _musicOption = ini_read_real("options", "music", 1);
+			var _soundOption = ini_read_real("options", "sound", 1);
+			var _fullscreenOption = ini_read_real("options", "fullscreen", window_get_fullscreen());
+			var _systemLanguagenOption = ini_read_string("options", "language", getLanguageIdentifier(os_get_language()));
+
+			ini_close();
+			
+			return {
+				musicOption: _musicOption,
+				soundOption: _soundOption,
+				fullscreenOption: _fullscreenOption,
+				systemLanguagenOption: _systemLanguagenOption
+			}
+		}
+	}	
+	
+	show_debug_message("Read options from local file");
+	
 	ini_open(SAVE);
-	ini_write_real("options", "music", global.gameOptions.music);
-	ini_write_real("options", "sound", global.gameOptions.sound);
-	ini_write_real("options", "fullscreen", global.gameOptions.fullscreen);	
-	ini_write_string("options", "language", global.gameOptions.language);
+	var _musicOption = ini_read_real("options", "music", 1);
+	var _soundOption = ini_read_real("options", "sound", 1);
+	var _fullscreenOption = ini_read_real("options", "fullscreen", window_get_fullscreen());
+	var _systemLanguagenOption = ini_read_string("options", "language", getLanguageIdentifier(os_get_language()));
+
 	ini_close();
+	
+	return {
+		musicOption: _musicOption,
+		soundOption: _soundOption,
+		fullscreenOption: _fullscreenOption,
+		systemLanguagenOption: _systemLanguagenOption
+	}
+	
+
+}
+
+function writeOptionsConfig() {
+	
+	show_debug_message("Write options to local file");
+	
+		ini_open(SAVE);
+		ini_write_real("options", "music", global.gameOptions.music);
+		ini_write_real("options", "sound", global.gameOptions.sound);
+		ini_write_real("options", "fullscreen", global.gameOptions.fullscreen);	
+		ini_write_string("options", "language", global.gameOptions.language);
+		ini_close();
+	
+	if(STEAM && global.steamIsReady) {
+		show_debug_message("Read options to Steam Cloud");
+		steam_file_write_file(SAVE_STEAM, SAVE);
+	}
 }
 
 function toggleOptionFullScreen() {

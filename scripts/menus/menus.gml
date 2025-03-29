@@ -428,11 +428,11 @@ function renderMenuTemplate(_menu, _template) {
 	switch(_template) {
 		case MenuTemplate.CENTER:
 			draw_set_font(fMenu48);
-			renderMenu(_menu, global.windowWidth * 0.5, global.windowHeight * 0.5, 48*2);
+			renderMenu(_menu, global.windowWidth * 0.5, global.windowHeight * 0.5, 48*2* global.windowSizeRatio);
 			break;
 		case MenuTemplate.RIGHT_DOWN:
 			draw_set_font(fMenu);
-			renderMenu(_menu, global.windowRightGUIMargin, global.windowDownGUIMargin,36,false, true, DEBUG, true);
+			renderMenu(_menu, global.windowRightGUIMargin, global.windowDownGUIMargin,36 * global.windowSizeRatio ,false, true, DEBUG, true);
 			break;			
 	}
 }

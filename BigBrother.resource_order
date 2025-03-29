@@ -57,6 +57,7 @@
     {"name":"oPause","order":1,"path":"objects/oPause/oPause.yy",},
     {"name":"oPlayer","order":2,"path":"objects/oPlayer/oPlayer.yy",},
     {"name":"oRope","order":2,"path":"objects/oRope/oRope.yy",},
+    {"name":"oSetup","order":3,"path":"objects/oSetup/oSetup.yy",},
     {"name":"oStep","order":1,"path":"objects/oStep/oStep.yy",},
     {"name":"oTransition","order":1,"path":"objects/oTransition/oTransition.yy",},
     {"name":"oTrigger","order":3,"path":"objects/oTrigger/oTrigger.yy",},

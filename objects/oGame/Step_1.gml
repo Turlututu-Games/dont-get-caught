@@ -18,11 +18,14 @@ var _ratio = global.windowSizeRatio;
 
 if(_windowWidth != global.windowWidth) {
 	
+
+	
 	global.windowHeight = _windowHeight;
 	var _newWidth = round(_windowHeight * RATIO);
 	
 	global.windowWidth = _newWidth;
 	
+	show_debug_message("Set global resolution: {0}x{1}", _newWidth, _windowHeight );
 	
 	if(_ratio == -1) {
 		global.windowSizeRatio = 1;	
