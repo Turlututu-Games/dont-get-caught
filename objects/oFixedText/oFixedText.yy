@@ -28,7 +28,7 @@
   "physicsStartAwake":true,
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"_colour","filters":[],"listItems":[],"multiselect":false,"name":"_colour","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"TextColor.LIGHT","varType":4,},
-    {"$GMObjectProperty":"v1","%Name":"_font","filters":[],"listItems":[],"multiselect":false,"name":"_font","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"TextSize.MAIN_LABEL","varType":4,},
+    {"$GMObjectProperty":"v1","%Name":"_font","filters":[],"listItems":[],"multiselect":false,"name":"_font","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"TextSize.TEXT","varType":4,},
     {"$GMObjectProperty":"v1","%Name":"_align","filters":[],"listItems":[],"multiselect":false,"name":"_align","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"TextAlign.CENTER","varType":4,},
   ],
   "resourceType":"GMObject",

@@ -6,5 +6,5 @@ if(global.inputs.validateMenu) {
 }
 
 if(STEAM && global.steamIsReady && !richPresenceSet) {
-	steam_set_rich_presence("game", "Home menu");
+	steam_set_rich_presence("steam_display", "Home menu");
 }

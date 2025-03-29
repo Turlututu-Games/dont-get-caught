@@ -19,11 +19,11 @@ var variables = [
 	//["_onTopLadder", _onTopLadder],
 	//["_affectedByGravity", _affectedByGravity],
 	//["_touchingFloor", _touchingFloor],
-	//["x", x],
-	//["y", y],
+	["x", x],
+	["y", y],
 	//["next camera", global.inputs.nextCamera],
 	//["image_speed", image_speed],
-	//["_canTakeRope", _canTakeRope],
+	// ["_canTakeRope", _canTakeRope],
 
 	//["_mouse_left_click", _mouse_left_click],*/
 	//["horizontalSpeed", horizontalSpeed],

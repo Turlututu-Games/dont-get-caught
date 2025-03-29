@@ -1,6 +1,6 @@
 playSound(sfxClickMenu);
 instance_destroy();
 
-with(other) {
-	redKey = true;
+with(oPlayer) {
+	ds_list_add(inventory, "redKey");
 }

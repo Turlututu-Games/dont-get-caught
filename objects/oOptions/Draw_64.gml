@@ -3,8 +3,12 @@ resetTexts();
 // draw_set_color(c_black);
 
 var _startX = global.windowWidth * 0.5;
-var _startY = global.windowHeight * 0.5
-var _size = 68;// 48;
+var _titleY = global.windowHeight * 0.3;
+var _size = 58 //* global.windowSizeRatio; // 48;
+var _startY = _titleY + _size;
+
+
+drawTextGUITemplate(_startX, _titleY, "Options", TextTemplate.SUB_MENU_TITLE);
 
 // draw_set_halign(fa_right);
 renderMenu(

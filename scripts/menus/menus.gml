@@ -104,9 +104,7 @@ function Menu(_options = [], _fromBottom = false) constructor {
 		if (!self.filtered) {
 			self.filter();
 		}
-		
-		show_debug_message("self.optionSelected {0}", self.optionSelected);
-		
+				
 		var _initial_valign = draw_get_valign();
 		var _initial_halign = draw_get_halign();	
 		var _mousePointDisabled = false;
@@ -179,15 +177,21 @@ function Menu(_options = [], _fromBottom = false) constructor {
 				self.drawSprite(_params, _i, _sprite);
 			}
 
+
+			
+
 			if (_shadow) {
-				draw_set_alpha(_opacity - 0.3);
+				//draw_set_alpha(_opacity - 0.3);
 
-				draw_set_color(c_black);
-				draw_text(_offset_x, _offset_y + 8, _print);
+				//draw_set_color(c_black);
+				//draw_text(_offset_x, _offset_y + 8, _print);
+				_drawTextGUIInternal(global.windowSizeRatio, _offset_x, _offset_y + 8, _print, c_black, undefined, undefined, undefined, undefined, _opacity - 0.3);
 			}
+			
+			_drawTextGUIInternal(global.windowSizeRatio, _offset_x, _offset_y, _print, _color, undefined, undefined, undefined, _opacity);
 
-			draw_set_alpha(_opacity);
-			draw_set_color(_color);
+			//draw_set_alpha(_opacity);
+			//draw_set_color(_color);
 			
 			var _offset_text_y = _offset_y;
 			
@@ -195,8 +199,8 @@ function Menu(_options = [], _fromBottom = false) constructor {
 				//_offset_text_y += (_i == self.optionSelected) ? _yOffsets[0] : _yOffsets[1];
 			//}
 
-			draw_text(_offset_x, _offset_y, _print);
-			draw_set_alpha(1.0);
+			//draw_text(_offset_x, _offset_y, _print);
+			// draw_set_alpha(1.0);
 		}
 
 	};

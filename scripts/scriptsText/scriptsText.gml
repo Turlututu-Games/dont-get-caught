@@ -27,6 +27,7 @@ enum TextAlign {
 enum TextTemplate {
 	STANDARD, //: c_white, fMenu, fa_left, fa_bottom, 1
 	STANDARD_SHADOW, //: c_white, fMenu, fa_left, fa_bottom, 1
+	SUB_MENU_TITLE, //: c_white, fMenu, fa_left, fa_bottom, 1
 	MENU_TITLE //: c_white, fMenu72, fa_center, fa_middle, 1	
 }
 
@@ -209,6 +210,10 @@ function drawTextGUITemplate(x, y, text, template) {
 			drawTextGUI(x, y, text, TextColor.LIGHT, TextSize.TITLE, TextAlign.CENTER, false, 1, 0);
 			break;
 			
+		case TextTemplate.SUB_MENU_TITLE:
+			drawTextGUI(x, y, text, TextColor.LIGHT, TextSize.LARGE_LABEL, TextAlign.CENTER, false, 1, 0);
+			break;			
+			
 		case TextTemplate.STANDARD_SHADOW:
 			drawTextGUI(x, y, text, TextColor.LIGHT, TextSize.TEXT, TextAlign.BOTTOM_LEFT, true, 1, 0);
 			break;
@@ -384,3 +389,20 @@ function drawTextAndSprite(key, textAndSpriteArray, x, y, colour, size, align) {
 	}
 }
 
+function capitalizeFirstLetter(text) {
+	var _first = string_upper(string_copy(text, 1, 1));
+	var _rest = string_copy(text,2,string_length(text));
+	return $"{_first}{_rest}";
+}
+
+function displayMessage(msg) {
+	if(!instance_exists(oFloatingTextBox)) {
+		with(instance_create_layer(x, y - 64, layer, oFloatingTextBox)) {
+			text = msg;
+			length = string_length(msg);
+			
+			//_inputs = [msg];
+			//_align = TextAlign.CENTER;
+		}
+	}
+}

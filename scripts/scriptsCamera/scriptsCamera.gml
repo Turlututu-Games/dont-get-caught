@@ -1,13 +1,26 @@
 /// @desc getCameraText(cameraType)
 /// @arg {Struct.CameraType} cameraType
-function getCameraText(cameraType) {
+/// @arg {Bool} moving
+function getCameraText(cameraType, moving) {
+	
+	var _prefixMoving = moving ? translate("cameraMovingId") : "";
+	var _cameraTypeString = "";
+	
 	switch(cameraType) {
-		case CameraType.DETECTION: return "DNG {0}";
-		case CameraType.INFRARED: return "INF {0}";
-		case CameraType.MOVING: return "MOV {0}";
-		case CameraType.SOUND: return "SND {0}";
+		case CameraType.DETECTION: 
+			_cameraTypeString = "cameraDetectionId";
+			break;
+		case CameraType.INFRARED:  
+			_cameraTypeString = "cameraInfraredId";
+			break;
+		case CameraType.SOUND:  
+			_cameraTypeString = "cameraSoundId";
+			break;
 		case CameraType.STANDARD: 
 		default: 
-		return "CAM {0}";
+			 _cameraTypeString = "cameraStandardId"; 
+			 break;
 	}
+	
+	return $"{_prefixMoving}{translate(_cameraTypeString)}";
 }

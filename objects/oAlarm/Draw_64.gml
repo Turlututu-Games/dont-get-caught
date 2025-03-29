@@ -1,15 +1,17 @@
-var _displayAlarm = false;
+// var _displayAlarm = false;
 var _displayOverlay = false;
 
 if(global.gameOptions.detectionTimer) {
-	_displayAlarm = started;	
-	_displayOverlay = true;
+
+	_displayOverlay = started;
 } else {
-	_displayAlarm = alarmTimer != alarmTimerInitial;
+	// _displayAlarm = alarmTimer != alarmTimerInitial;
+	_displayOverlay = alarmTimer != alarmTimerInitial
 }
 
-//addDebugVariable("alarmTimer", alarmTimer);
-//addDebugVariable("alarmTimerInitial", alarmTimerInitial);
+	addDebugVariable("alarmTimer", alarmTimer);
+	addDebugVariable("alarmTimerInitial", alarmTimerInitial);
+	addDebugVariable("_displayOverlay", _displayOverlay);
 
 
 
@@ -19,8 +21,8 @@ if(global.gameOptions.detectionTimer) {
 	var _sideWidth = global.windowWidth / 4; // This GUI element is twice the size
 	var _sideHeight = global.windowHeight / 6;	
 
-addDebugVariable("_sideWidth", _sideWidth);
-addDebugVariable("_sideHeight", _sideHeight);
+	addDebugVariable("_sideWidth", _sideWidth);
+	addDebugVariable("_sideHeight", _sideHeight);
 
 	//var _sideWidth = 100;
 	//var _sideHeight = 100;
@@ -36,16 +38,16 @@ addDebugVariable("_sideHeight", _sideHeight);
 	draw_rectangle(_mainWidth, _mainHeight - _sideHeight, _mainWidth + _sideWidth, _mainHeight, false);
 	
 	if(_displayOverlay) {
-	draw_set_color(c_red);
-	draw_rectangle(
-		_mainWidth, 
-		_mainHeight - _sideHeight, 
-		_mainWidth + (_sideWidth * percent), 
-		_mainHeight, 
-		false
-	);
+		draw_set_color(c_red);
+		draw_rectangle(
+			_mainWidth, 
+			_mainHeight - _sideHeight, 
+			_mainWidth + (_sideWidth * percent), 
+			_mainHeight, 
+			false
+		);
 	
-	draw_sprite_stretched(sDangerOverlay, 0, _mainWidth, _mainHeight - _sideHeight, _sideWidth, _sideHeight);
+		draw_sprite_stretched(sDangerOverlay, 0, _mainWidth, _mainHeight - _sideHeight, _sideWidth, _sideHeight);
 
 
 	// draw_sprite_part_ext

@@ -7,10 +7,13 @@
   ],
   "managed":true,
   "name":"oCameraDanger",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},"propertyId":{"name":"cameraDetectionSpeed","path":"objects/oCamera/oCamera.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"5",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},"propertyId":{"name":"cameraType","path":"objects/oCamera/oCamera.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"CameraType.DETECTION",},
+  ],
   "parent":{
-    "name":"Camera",
-    "path":"folders/Objects/Camera.yy",
+    "name":"Parents",
+    "path":"folders/Objects/Camera/Parents.yy",
   },
   "parentObjectId":{
     "name":"oCamera",

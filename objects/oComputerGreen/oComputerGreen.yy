@@ -1,19 +1,21 @@
 {
   "$GMObject":"",
   "%Name":"oComputerGreen",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "eventList":[],
   "managed":true,
   "name":"oComputerGreen",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oComputerColorGate","path":"objects/oComputerColorGate/oComputerColorGate.yy",},"propertyId":{"name":"_key","path":"objects/oComputerColorGate/oComputerColorGate.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"greenKey\"",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oComputerColorGate","path":"objects/oComputerColorGate/oComputerColorGate.yy",},"propertyId":{"name":"_messageColor","path":"objects/oComputerColorGate/oComputerColorGate.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"colorGreen\"",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oComputerColorGate","path":"objects/oComputerColorGate/oComputerColorGate.yy",},"propertyId":{"name":"_gateObject","path":"objects/oComputerColorGate/oComputerColorGate.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"oDoorGreen",},
+  ],
   "parent":{
     "name":"Interraction",
     "path":"folders/Objects/Interraction.yy",
   },
   "parentObjectId":{
-    "name":"oComputer",
-    "path":"objects/oComputer/oComputer.yy",
+    "name":"oComputerColorGate",
+    "path":"objects/oComputerColorGate/oComputerColorGate.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

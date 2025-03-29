@@ -4,7 +4,7 @@ global.pauseMenu = new Menu([
 	optionRestartGame,
 	// standardMenuOptions().returnToGameSelection,
 	optionReturnToMenu
-])
+]);
 
 // continue
 // restart level

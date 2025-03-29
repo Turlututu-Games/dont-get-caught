@@ -28,6 +28,7 @@ functionToCallOnDrawTrigger = function() {
 	draw_set_color(c_black);
 	draw_set_alpha(0.75);
 	draw_rectangle(0,0,global.windowWidth,global.windowHeight,false);
+	resetTexts();
 	
 	drawTextGUITemplate(global.windowWidth * 0.5, global.windowHeight * 0.3, translate("endOfDemo"), TextTemplate.MENU_TITLE );
 	

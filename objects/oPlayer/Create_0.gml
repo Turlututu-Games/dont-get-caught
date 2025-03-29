@@ -15,9 +15,14 @@ activeCamera = 0;
 
 currentCamerasObject = [];
 
-greenKey = false;
-redKey = false;
-blueKey = false;
+/* keys = {
+	green: false,
+	red: false,
+	blue: false
+}*/
+
+inventory = ds_list_create();
+
 cooldownInterraction = -1;
 
 collisionMap = layer_tilemap_get_id(layer_get_id(COLLISIONS_LAYER));

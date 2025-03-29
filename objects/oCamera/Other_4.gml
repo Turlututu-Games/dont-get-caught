@@ -1,1 +1,1 @@
-cameraName = getCameraText(cameraType);
+cameraName = getCameraText(cameraType, moving);

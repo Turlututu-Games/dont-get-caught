@@ -1,6 +1,11 @@
 {
   "$GMLinuxOptions":"",
   "%Name":"Linux",
+  "ConfigValues":{
+    "Debug":{
+      "option_linux_scale":"0",
+    },
+  },
   "name":"Linux",
   "option_linux_allow_fullscreen":true,
   "option_linux_disable_sandbox":false,

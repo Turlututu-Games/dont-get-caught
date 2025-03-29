@@ -45,6 +45,10 @@ var _onLadderBottom = place_meeting(x, y+walkSpeed, oLadder);
 var _canTakeRope = place_meeting(x, y-16, oRope);
 var _canUseComputer = place_meeting(x, y+1, oComputer);
 
+//addDebugVariable("_canTakeRope", _canTakeRope);
+//addDebugVariable("_touchingFloor", _touchingFloor);
+//addDebugVariable("_onTopLadder", _onTopLadder);
+
 //_affectedByGravity = !(_onTopLadder || onRope); // Indicate if the gravity must be active (not active in ladder and rope)
 
 if(previousState == ActionStates.CLIMB && _onLadder == false && _inputUp && _onLadderBottom) {
@@ -83,7 +87,7 @@ if ((_touchingFloor || _canTakeRope) && _inputJump) {
 	state = ActionStates.JUMP_FALL;	
 }
 
-if (_touchingFloor && _canTakeRope && (_inputUse || _inputUp)) {
+if ((_touchingFloor || _onTopLadder) && _canTakeRope && (_inputUse || _inputUp)) {
 	onRope = true;
 }
 
@@ -165,7 +169,7 @@ var meeting_vertical = false;
 		meeting_horizontal = true;
 	
 	}
-	x = x + horizontalSpeed;	
+	x = round(x + horizontalSpeed);	
 
 	// Vertical collision (but getting as close as possible)
 	if (place_meeting(x, y+verticalSpeed, [oBlock, collisionMap])) {
@@ -175,7 +179,9 @@ var meeting_vertical = false;
 		verticalSpeed = 0;
 		meeting_vertical = true;
 	}
-	y = y + verticalSpeed;
+	y = round(y + verticalSpeed);
+	
+	
 	
 // move_and_collide(horizontalSpeed, verticalSpeed, [oBlock, collisionMap]);
 #endregion

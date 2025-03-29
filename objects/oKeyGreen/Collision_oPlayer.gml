@@ -16,6 +16,6 @@ for (var i = 0; i < _instancesNumber; ++i;)
 playSound(sfxClickMenu);
 instance_destroy();
 
-with(other) {
-	greenKey = true;
+with(oPlayer) {
+	ds_list_add(inventory, "greenKey");
 }

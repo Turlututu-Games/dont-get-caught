@@ -19,7 +19,6 @@ enum CameraType {
 	DETECTION,
 	INFRARED,
 	SOUND,
-	MOVING,
 }
 
 enum Platforms {

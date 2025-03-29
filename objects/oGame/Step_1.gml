@@ -47,7 +47,11 @@ if(_windowWidth != global.windowWidth) {
 addDebugVariable("fps", game_get_speed(gamespeed_fps))
 addDebugVariable("frame", global.frame);
 
+addDebugVariable("real windowHeight", _windowHeight)
+addDebugVariable("real windowWidth", _windowWidth)
+
 addDebugVariable("windowHeight", global.windowHeight)
 addDebugVariable("windowWidth", global.windowWidth)
+addDebugVariable("windowSizeRatio", global.windowSizeRatio)
 
 // addDebugVariable("build_date",  date_date_string(GM_build_date))

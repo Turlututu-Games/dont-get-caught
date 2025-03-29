@@ -10,8 +10,8 @@
   "name":"oCamera",
   "overriddenProperties":[],
   "parent":{
-    "name":"Camera",
-    "path":"folders/Objects/Camera.yy",
+    "name":"Parents",
+    "path":"folders/Objects/Camera/Parents.yy",
   },
   "parentObjectId":{
     "name":"oGameObject",
@@ -30,7 +30,14 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v1","%Name":"_cameraIndex","filters":[],"listItems":[],"multiselect":false,"name":"_cameraIndex","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
+    {"$GMObjectProperty":"v1","%Name":"first","filters":[],"listItems":[],"multiselect":false,"name":"first","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
+    {"$GMObjectProperty":"v1","%Name":"status","filters":[],"listItems":[],"multiselect":false,"name":"status","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"CameraStatus.ACTIVE","varType":4,},
+    {"$GMObjectProperty":"v1","%Name":"cameraType","filters":[],"listItems":[],"multiselect":false,"name":"cameraType","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"CameraType.STANDARD","varType":4,},
+    {"$GMObjectProperty":"v1","%Name":"moving","filters":[],"listItems":[],"multiselect":false,"name":"moving","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
+    {"$GMObjectProperty":"v1","%Name":"cameraDetectionSpeed","filters":[],"listItems":[],"multiselect":false,"name":"cameraDetectionSpeed","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
