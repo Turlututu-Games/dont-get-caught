@@ -1,3 +1,8 @@
+enum MenuTemplate {
+	CENTER,
+	RIGHT_DOWN,
+}
+
 /// @func Menu item options
 /// @param {Array<Struct.Platforms>} _platforms List of plateforms. If empty, will be available to all
 /// @param {Asset.GMSound} _sound List of plateforms. Sound to play when triggering
@@ -43,7 +48,7 @@ function Menu(_options = []) constructor {
 	options = _options;
 	filtered = false;
 	overrideSize = undefined;
-
+	
 	static step = function() {
 		if (!self.filtered) {
 			self.filter();
@@ -77,10 +82,11 @@ function Menu(_options = []) constructor {
 	/// @param {Bool} [_shadow] display shadow under the text ? (default: false)
 	/// @param {Bool} [_enableMouse] Allow mouse to navigate ? (default: true)
 	/// @param {Bool} [_enableBox] If mouse is allowed, display a bounding box on items ? (default: false)
+	/// @param {Bool} [_fromBottom] If enabled, draw the menu from the bottom instead of the top
 	/// @param {Bool} [_cursors] Display cursor before and after selected option ? (default: true)
 	/// @param {Constant.Color} [_color] Font color (default: c_white)
 	/// @param {Asset.GMSprite} [_sprite] Display a sprite under menu item ? (default: undefined)
-	static render = function(_startX, _startY, _size, _shadow = false, _enableMouse = true, _enableBox = false, _cursors = true, _color = c_white, _sprite = undefined) {
+	static render = function(_startX, _startY, _size, _shadow = false, _enableMouse = true, _enableBox = false, _fromBottom = false, _cursors = true, _color = c_white, _sprite = undefined) {
 		if (!self.filtered) {
 			self.filter();
 		}
@@ -107,8 +113,9 @@ function Menu(_options = []) constructor {
 				_opacity = _current.option.unselectedOpacity;
 			}
 			
+			var _offsetPositionY = _fromBottom ? 0 -  (_i * _size) :  (_i * _size);
 			var _offset_x = _startX;
-			var _offset_y = _startY + (_i * _size);
+			var _offset_y = _startY + _offsetPositionY;
 			
 			if(_current.option.offsetX) {
 				_offset_x += _current.option.offsetX;	
@@ -363,25 +370,56 @@ function Menu(_options = []) constructor {
 	};
 }
 
+/// @func renderMenu(_menu, _startX, _startY, _size, [_shadow], [_enableMouse], [_enableBox], [_fromBottom], [_cursors], [_color], [_sprite])
+/// @param {Struct.Menu} _menu Menu to render
+/// @param {Real} _startX The horizontal starting position
+/// @param {Real} _startY The vertical starting position
+/// @param {Real} _size The font size to use
+/// @param {Bool} [_shadow] display shadow under the text ? (default: false)
+/// @param {Bool} [_enableMouse] Allow mouse to navigate ? (default: true)
+/// @param {Bool} [_enableBox] If mouse is allowed, display a bounding box on items ? (default: false)
+/// @param {Bool} [_fromBottom] If enabled, draw the menu from the bottom instead of the top
+/// @param {Bool} [_cursors] Display cursor before and after selected option ? (default: true)
+/// @param {Constant.Color} [_color] Font color (default: c_white)
+/// @param {Asset.GMSprite} [_sprite] Display a sprite under menu item ? (default: undefined)
+function renderMenu(_menu, _startX, _startY, _size, _shadow = false, _enableMouse = true, _enableBox = DEBUG, _fromBottom = false, _cursors = true, _color = c_white, _sprite = undefined) {
+	_menu.render(_startX, _startY, _size, _shadow, _enableMouse, _enableBox, _fromBottom, _cursors, _color, _sprite);
+}
+
+function renderMenuTemplate(_menu, _template) {
+	switch(_template) {
+		case MenuTemplate.CENTER:
+			draw_set_font(fMenu48);
+			renderMenu(_menu, global.windowWidth * 0.5, global.windowHeight * 0.5, 48*2);
+			break;
+		case MenuTemplate.RIGHT_DOWN:
+			var _sizes = getMenuSizes();
+			draw_set_font(fMenu);
+			renderMenu(_menu,_sizes.menuX, _sizes.menuY,36,false, true, DEBUG, true);
+			break;			
+	}
+}
+
 function getMenuSizes() {
 	var _guiXMargin = global.windowWidth * 0.04;
-	var _guiYMargin = _guiXMargin * 5;
+	var _guiYMargin = global.windowHeight * 0.04;
+	// var _guiYMargin = _guiXMargin * 5;
 
-	var _menuXMargin = global.windowWidth * 0.25;
+	//var _menuXMargin = global.windowWidth * 0.25;
 
 	var _menuX = global.windowWidth - _guiXMargin;
 	var _menuY = global.windowHeight - _guiYMargin;
-	var _menuXTarget = global.windowWidth - _guiXMargin;	
+	//var _menuXTarget = global.windowWidth - _guiXMargin;	
 	
 	//addDebugVariable("_menuX", _menuX);
 	//addDebugVariable("_menuY", _menuY);
 	
 	return {
-		guiXMargin: _guiXMargin,
-		guiYMargin: _guiYMargin,
-		menuXMargin: _menuXMargin,
+		//guiXMargin: _guiXMargin,
+		//guiYMargin: _guiYMargin,
+		//menuXMargin: _menuXMargin,
 		menuX: _menuX,
 		menuY: _menuY,
-		menuXTarget: _menuXTarget
+		//menuXTarget: _menuXTarget
 	}
 }

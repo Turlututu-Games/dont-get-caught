@@ -4,7 +4,7 @@
   "bboxMode":0,
   "bbox_bottom":359,
   "bbox_left":0,
-  "bbox_right":479,
+  "bbox_right":639,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"58e64e48-8d4a-46c4-b8f7-9c0eb71c2660","name":"58e64e48-8d4a-46c4-b8f7-9c0eb71c2660","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"20245cbb-4b01-44a5-9e68-034e28bb6f1f","name":"20245cbb-4b01-44a5-9e68-034e28bb6f1f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":360,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"255b1b19-51a2-4daf-a8df-18ed5d4770c4","blendMode":0,"displayName":"default","isLocked":false,"name":"255b1b19-51a2-4daf-a8df-18ed5d4770c4","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"dfc4870e-94ef-4fb6-bd01-f376e40a1ede","blendMode":0,"displayName":"default","isLocked":false,"name":"dfc4870e-94ef-4fb6-bd01-f376e40a1ede","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"sCameraShutdownSmall",
   "nineSlice":null,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"58e64e48-8d4a-46c4-b8f7-9c0eb71c2660","path":"sprites/sCameraShutdownSmall/sCameraShutdownSmall.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"4346afcb-19a0-497b-b0c1-f9bc702aaa4b","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"20245cbb-4b01-44a5-9e68-034e28bb6f1f","path":"sprites/sCameraShutdownSmall/sCameraShutdownSmall.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"a192a93d-ef48-4fed-b767-46bd4e50a341","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":480,
+  "width":640,
 }

@@ -4,7 +4,7 @@
   "bboxMode":0,
   "bbox_bottom":359,
   "bbox_left":0,
-  "bbox_right":479,
+  "bbox_right":639,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,15 +12,15 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"5dab687a-4aec-4ca2-bb4b-4e20352a0782","name":"5dab687a-4aec-4ca2-bb4b-4e20352a0782","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"7ef9ae3c-f1b1-4c91-a33b-94d3a43b5a50","name":"7ef9ae3c-f1b1-4c91-a33b-94d3a43b5a50","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"1fc27c86-febd-40c5-8bf0-147b3a480df9","name":"1fc27c86-febd-40c5-8bf0-147b3a480df9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"5d2820fd-1394-461a-b811-94d893458bee","name":"5d2820fd-1394-461a-b811-94d893458bee","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":360,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"f208f8b4-7bf0-4cef-9892-4bf60d0bdcf5","blendMode":0,"displayName":"default","isLocked":false,"name":"f208f8b4-7bf0-4cef-9892-4bf60d0bdcf5","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"927fb716-fe73-4f5b-898a-ba8b3630c3dc","blendMode":0,"displayName":"default","isLocked":false,"name":"927fb716-fe73-4f5b-898a-ba8b3630c3dc","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"sCameraOverlaySmall",
   "nineSlice":null,
@@ -70,11 +70,11 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5dab687a-4aec-4ca2-bb4b-4e20352a0782","path":"sprites/sCameraOverlaySmall/sCameraOverlaySmall.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"53e76eed-4d74-44ad-9ad3-04e73b8b9f64","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"1fc27c86-febd-40c5-8bf0-147b3a480df9","path":"sprites/sCameraOverlaySmall/sCameraOverlaySmall.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"7a57636e-a69f-4830-9dbe-4388451351a3","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7ef9ae3c-f1b1-4c91-a33b-94d3a43b5a50","path":"sprites/sCameraOverlaySmall/sCameraOverlaySmall.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"a2f7dbf7-b050-4d0f-9b73-32794666147c","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5d2820fd-1394-461a-b811-94d893458bee","path":"sprites/sCameraOverlaySmall/sCameraOverlaySmall.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"b9ede153-b5aa-4cfd-b339-5f9d97892667","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
@@ -90,5 +90,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":480,
+  "width":640,
 }

@@ -1,1 +1,5 @@
 functionToCallOnStep();
+
+if(triggered) {
+	functionToCallOnStepTrigger();	
+}

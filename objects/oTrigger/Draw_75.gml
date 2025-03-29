@@ -1,1 +1,5 @@
 functionToCallOnDraw();
+
+if(triggered) {
+	functionToCallOnDrawTrigger();	
+}

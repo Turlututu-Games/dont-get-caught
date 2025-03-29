@@ -16,10 +16,12 @@ var _windowHeight = window_get_height();
 
 
 
-if(_windowWidth != global.windowWidth || _windowHeight != global.windowHeight) {
+if(_windowWidth != global.windowWidth) {
 	
 	global.windowHeight = window_get_height();
-	global.windowWidth = global.windowHeight * 1.77777777;
+	var _newWidth = round(global.windowHeight * RATIO);
+	
+	global.windowWidth = _newWidth;
 	
 	
 	if(global.windowSizeRatio == -1) {
@@ -37,9 +39,8 @@ if(_windowWidth != global.windowWidth || _windowHeight != global.windowHeight) {
 
 addDebugVariable("fps", game_get_speed(gamespeed_fps))
 addDebugVariable("frame", global.frame);
-addDebugVariable("windowRatio", global.windowSizeRatio);
 
-//addDebugVariable("windowHeight", global.windowHeight)
-//addDebugVariable("windowWidth", global.windowWidth)
+addDebugVariable("windowHeight", global.windowHeight)
+addDebugVariable("windowWidth", global.windowWidth)
 
 // addDebugVariable("build_date",  date_date_string(GM_build_date))

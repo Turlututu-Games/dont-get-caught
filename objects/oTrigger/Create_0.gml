@@ -9,7 +9,15 @@ functionToCallOnStep = function() {
 	
 }
 
+functionToCallOnStepTrigger = function() {
+	
+}
+
 functionToCallOnDraw = function() {
+	
+}
+
+functionToCallOnDrawTrigger = function() {
 	
 }
 

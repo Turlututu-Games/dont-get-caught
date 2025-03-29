@@ -17,7 +17,7 @@
         {"$GMRSpriteGraphic":"","%Name":"graphic_3781DE1_2","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_3781DE1_2","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"sTitleRed","path":"sprites/sTitleRed/sTitleRed.yy",},"x":-64.0,"y":32.0,},
       ],"depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"TitleTop","properties":[],"resourceType":"GMRAssetLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":false,},
     {"$GMRAssetLayer":"","%Name":"Camera","assets":[
-        {"$GMRSpriteGraphic":"","%Name":"graphic_2D7AFA6F_2","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_2D7AFA6F_2","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.335,"scaleY":1.0,"spriteId":{"name":"sCameraOverlay","path":"sprites/sCameraOverlay/sCameraOverlay.yy",},"x":0.0,"y":0.0,},
+        {"$GMRSpriteGraphic":"","%Name":"graphic_2D7AFA6F_2","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_2D7AFA6F_2","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":0.2776304,"scaleY":0.2776304,"spriteId":{"name":"sCameraOverlay","path":"sprites/sCameraOverlay/sCameraOverlay.yy",},"x":0.0,"y":0.0,},
       ],"depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Camera","properties":[],"resourceType":"GMRAssetLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Player","assets":[
         {"$GMRSpriteGraphic":"","%Name":"graphic_775A994B_2","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_775A994B_2","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"sJohnTitle","path":"sprites/sJohnTitle/sJohnTitle.yy",},"x":288.0,"y":384.0,},
@@ -46,7 +46,7 @@
     "Height":600,
     "inheritRoomSettings":false,
     "persistent":false,
-    "Width":800,
+    "Width":1066,
   },
   "sequenceId":null,
   "views":[

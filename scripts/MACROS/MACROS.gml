@@ -1,6 +1,7 @@
 #macro DEBUG false
 #macro STEAM false
 
+#macro RATIO 16 / 9
 
 #macro Debug:DEBUG true
 #macro DesktopSteam:STEAM true

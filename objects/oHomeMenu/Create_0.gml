@@ -2,9 +2,11 @@ global.allowPause = false;
 
 var _menuOptions = new MenuItemOptions();
 _menuOptions.halign = fa_right;
+_menuOptions.valign = fa_bottom;
 
 var _menuOptionsDesktop = new MenuItemOptions([Platforms.DESKTOP]);
 _menuOptionsDesktop.halign = fa_right;
+_menuOptionsDesktop.valign = fa_bottom;
 
 var _startDemo = function() {
 	playSound(sfxStartGame)
@@ -55,6 +57,8 @@ if(DEBUG) {
 array_push(_menu, new MenuItem("options",_options, _menuOptions));
 array_push(_menu, new MenuItem("exit",_exit, _menuOptionsDesktop));
 
+// reverse, because of the fromBottom display
+_menu = array_reverse(_menu);
 
 menu = new Menu(_menu);
 
