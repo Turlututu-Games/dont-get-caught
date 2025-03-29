@@ -8,10 +8,12 @@ function toggleCamera() {
 			status = CameraStatus.OFF;	
 		} else {
 			status = CameraStatus.ACTIVE;	
-		}
+		}		
 	}
+	
 	playSound(sfxComputerExecute);
 	displayMessage(string(translate("computerOnOffCameraToggled"), 4))
+
 }
 
 function useComputer() {

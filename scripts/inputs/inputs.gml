@@ -41,16 +41,16 @@ function getInputs(){
 		_keyRestart = _keyRestart || gamepad_button_check_pressed(global.gamepadMain, gp_select);		
 		_keyPause = _keyPause || gamepad_button_check_pressed(global.gamepadMain, gp_start);		
 		
-		_keyJump = _keyJump || gamepad_button_check(global.gamepadMain, gp_face1) || gamepad_button_check(global.gamepadMain, gp_face3);
-		_keyUse = _keyUse || gamepad_button_check(global.gamepadMain, gp_face2) || gamepad_button_check(global.gamepadMain, gp_face2);
+		_keyJump = _keyJump || gamepad_button_check_pressed(global.gamepadMain, gp_face1) || gamepad_button_check_pressed(global.gamepadMain, gp_face3);
+		_keyUse = _keyUse || gamepad_button_check_pressed(global.gamepadMain, gp_face2) || gamepad_button_check_pressed(global.gamepadMain, gp_face2);
 
 
 		_keyNextCamera = _keyNextCamera || gamepad_button_check_pressed(global.gamepadMain, gp_shoulderr) || gamepad_button_check_pressed(global.gamepadMain, gp_shoulderrb);
 		_keyPreviousCamera = _keyPreviousCamera || gamepad_button_check_pressed(global.gamepadMain, gp_shoulderl) || gamepad_button_check_pressed(global.gamepadMain, gp_shoulderlb);
 		
 		_keyValidateMenu = _keyValidateMenu 
-			|| gamepad_button_check(global.gamepadMain, gp_start)
-			|| gamepad_button_check(global.gamepadMain, gp_face1) || gamepad_button_check(global.gamepadMain, gp_face3);
+			|| gamepad_button_check_pressed(global.gamepadMain, gp_start)
+			|| gamepad_button_check_pressed(global.gamepadMain, gp_face1) || gamepad_button_check_pressed(global.gamepadMain, gp_face3);
 	}
 	
 	var _keyUpMenu = _keyUpPressed || mouse_wheel_up();
@@ -100,7 +100,19 @@ function getAllInputsSprite() {
 		var _validateMenu = sKeyboardSpace;
 	
 	if(global.gamepadMain != undefined)	{
-			
+		_left = sGamepadCrossLeft;
+		_right = sGamepadCrossRight;
+		_up = sGamepadCrossUp;	
+		_upMenu = sGamepadCrossUp;
+		_down = sGamepadCrossDown;		
+		_downMenu = sGamepadCrossDown;
+		_jump = sGamepadButtonA;
+		_use = sGamepadButtonB;	
+		_nextCamera = sGamepadButtonRB;		
+		_previousCamera = sGamepadButtonLB;
+		_restart = sGamepadButtonSelect;
+		_pause = sGamepadButtonStart;
+		_validateMenu = sGamepadButtonStart;
 	}
 	
 	return {

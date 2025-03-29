@@ -23,6 +23,7 @@
     {"name":"inst_500D61A1","path":"rooms/rTuto1/rTuto1.yy",},
     {"name":"inst_1FC10765","path":"rooms/rTuto1/rTuto1.yy",},
     {"name":"inst_4D99B60C","path":"rooms/rTuto1/rTuto1.yy",},
+    {"name":"inst_2BD90F41","path":"rooms/rTuto1/rTuto1.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -63,6 +64,7 @@
         {"$GMRInstance":"v1","%Name":"inst_4D99B60C","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4D99B60C","objectId":{"name":"oFixedText","path":"objects/oFixedText/oFixedText.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oFixedText","path":"objects/oFixedText/oFixedText.yy",},"propertyId":{"name":"_font","path":"objects/oFixedText/oFixedText.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"TextSize.LARGE_LABEL",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":224.0,"y":160.0,},
+        {"$GMRInstance":"v1","%Name":"inst_2BD90F41","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2BD90F41","objectId":{"name":"oComputerOn","path":"objects/oComputerOn/oComputerOn.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":32.0,"y":352.0,},
       ],"layers":[],"name":"LevelDesign","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Assets","assets":[
         {"$GMRSpriteGraphic":"","%Name":"graphic_70ECD601","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_70ECD601","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"sExitDoor","path":"sprites/sExitDoor/sExitDoor.yy",},"x":1408.0,"y":352.0,},

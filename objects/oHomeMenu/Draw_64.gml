@@ -1,9 +1,6 @@
 resetTexts();
 
-
-
-
 renderMenuTemplate(menu, MenuTemplate.RIGHT_DOWN);
 
-drawTextGUITemplate(0, global.windowHeight, version, TextTemplate.STANDARD)
+drawTextGUITemplate(global.windowLeftGUIMargin,global.windowDownGUIMargin, version, TextTemplate.STANDARD)
 

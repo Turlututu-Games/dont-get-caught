@@ -13,28 +13,35 @@ if(DEBUG) {
 
 var _windowWidth = window_get_width();
 var _windowHeight = window_get_height();
-
+var _ratio = global.windowSizeRatio;
 
 
 if(_windowWidth != global.windowWidth) {
 	
-	global.windowHeight = window_get_height();
-	var _newWidth = round(global.windowHeight * RATIO);
+	global.windowHeight = _windowHeight;
+	var _newWidth = round(_windowHeight * RATIO);
 	
 	global.windowWidth = _newWidth;
 	
 	
-	if(global.windowSizeRatio == -1) {
+	if(_ratio == -1) {
 		global.windowSizeRatio = 1;	
-		_initialHeight = global.windowHeight;
+		_initialHeight = _windowHeight;
 	} else {
-		global.windowSizeRatio = global.windowHeight / _initialHeight;
+		global.windowSizeRatio = _windowHeight / _initialHeight;
 	}
 	
-	// 1.777777778
+	var _windowWidthGUIMargin = _newWidth * 0.04;
+	var _windowHeightGUIMargin = _windowHeight * 0.08;
+	
+	global.windowLeftGUIMargin = _windowWidthGUIMargin;
+	global.windowTopGUIMargin = _windowHeightGUIMargin;
+	
+	global.windowRightGUIMargin = _newWidth - _windowWidthGUIMargin;
+	global.windowDownGUIMargin = _windowHeight - _windowHeightGUIMargin;
 	
 	// window_set_size(global.windowWidth, global.windowHeight);
-	surface_resize(application_surface, global.windowWidth, global.windowHeight);	
+	surface_resize(application_surface, _newWidth, _windowHeight);	
 }
 
 addDebugVariable("fps", game_get_speed(gamespeed_fps))

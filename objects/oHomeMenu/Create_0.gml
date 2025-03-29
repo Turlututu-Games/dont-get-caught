@@ -60,7 +60,7 @@ array_push(_menu, new MenuItem("exit",_exit, _menuOptionsDesktop));
 // reverse, because of the fromBottom display
 _menu = array_reverse(_menu);
 
-menu = new Menu(_menu);
+menu = new Menu(_menu, true);
 
 playMusic(musicMenu, 0.2)
 

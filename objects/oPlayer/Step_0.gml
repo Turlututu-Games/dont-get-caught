@@ -37,13 +37,13 @@ if(!started && (_inputLeft || _inputRight || _inputJump)) {
 
 #region Calculate states and movements
 state = ActionStates.IDLE;
-_move = _inputRight - _inputLeft; // Calculate movement.
-_touchingFloor = place_meeting(x, y+1, [oWall, collisionMap]);
-_onLadder = place_meeting(x, y, oLadder);
-_onTopLadder = place_meeting(x, y+1, oLadder);
-_onLadderBottom = place_meeting(x, y+walkSpeed, oLadder);
-_canTakeRope = place_meeting(x, y-16, oRope);
-_canUseComputer = place_meeting(x, y+1, oComputer);
+var _move = _inputRight - _inputLeft; // Calculate movement.
+var _touchingFloor = place_meeting(x, y+1, [oWall, collisionMap]);
+var _onLadder = place_meeting(x, y, oLadder);
+var _onTopLadder = place_meeting(x, y+1, oLadder);
+var _onLadderBottom = place_meeting(x, y+walkSpeed, oLadder);
+var _canTakeRope = place_meeting(x, y-16, oRope);
+var _canUseComputer = place_meeting(x, y+1, oComputer);
 
 //_affectedByGravity = !(_onTopLadder || onRope); // Indicate if the gravity must be active (not active in ladder and rope)
 
@@ -58,7 +58,7 @@ if(previousState == ActionStates.CLIMB && _onLadder == false && _inputUp && _onL
 
 var _onRopeOrLadder = _onTopLadder || onRope;
 
-_affectedByGravity = !(_onRopeOrLadder); // Indicate if the gravity must be active (not active in ladder and rope)
+var _affectedByGravity = !(_onRopeOrLadder); // Indicate if the gravity must be active (not active in ladder and rope)
 
 var _offsetMeetingY = 0;
 
@@ -185,7 +185,7 @@ var meeting_vertical = false;
 switch(state) {
 	case ActionStates.WALK: {
 		image_speed = 0.5;
-		sprite_index = sPlayerJohnWalk;	
+		sprite_index = PLAYER_SPRITE_WALK;	
 		
 		// Currently only in debug!
 		if(DEBUG) {
@@ -207,7 +207,7 @@ switch(state) {
 	}
 	case ActionStates.JUMP_FALL: {
 		// The player is on air
-		sprite_index = sPlayerJohnJump;
+		sprite_index = PLAYER_SPRITE_JUMP;
 		image_speed = 0;
 		if(verticalSpeed > 0) {
 			// Falling animation
@@ -220,7 +220,7 @@ switch(state) {
 		break;	
 	}
 	case ActionStates.ROPE: {
-		sprite_index = sPlayerJohnRope;
+		sprite_index = PLAYER_SPRITE_ROPE;
 		stopAllSounds();
 		if(horizontalSpeed == 0) {
 			image_speed = 0;
@@ -235,7 +235,7 @@ switch(state) {
 		break;	
 	}
 	case ActionStates.CLIMB: {
-		sprite_index = sPlayerJohnClimb;
+		sprite_index = PLAYER_SPRITE_CLIMB;
 		stopAllSounds();
 		if(verticalSpeed == 0) {
 			image_speed = 0;
@@ -250,7 +250,7 @@ switch(state) {
 		break;	
 	}
 	case ActionStates.INTERRACT: {
-		sprite_index = sPlayerJohnInterraction;
+		sprite_index = PLAYER_SPRITE_USE;
 		break;	
 	}
 	case ActionStates.DEAD: {
@@ -258,7 +258,7 @@ switch(state) {
 	}
 	case ActionStates.IDLE: default: {
 		image_speed = 0.5;
-		sprite_index = sPlayerJohnIdle;	
+		sprite_index = PLAYER_SPRITE_IDLE;	
 		stopAllSounds();
 		if(previousState == ActionStates.JUMP_FALL) {		
 			playSound(sfxFall);

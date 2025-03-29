@@ -43,11 +43,16 @@ function MenuItem(
 
 /// @func Menu instance
 /// @param {Array<Struct.MenuItem>} _options List of options
-function Menu(_options = []) constructor {
-	optionSelected = 0;
+/// @param {Bool} _fromBottom Indicate that the menu is displayed from the bottom
+function Menu(_options = [], _fromBottom = false) constructor {
+	optionSelected = undefined;
 	options = _options;
 	filtered = false;
 	overrideSize = undefined;
+	fromBottom = _fromBottom;
+	
+	mouseX = 0;
+	mouseY = 0;
 	
 	static step = function() {
 		if (!self.filtered) {
@@ -57,8 +62,18 @@ function Menu(_options = []) constructor {
 		if (array_length(self.options) == 0) {
 			return;
 		}
+		
+		var _move = global.inputs.downMenu - global.inputs.upMenu;
+		
+		if(self.fromBottom) {
+			_move = 0 - _move;	
+		}
+		
+		if(self.optionSelected == undefined) {
+			self.optionSelected = self.fromBottom ?  array_length(self.options) - 1 : 0;
+		}
 
-		self.optionSelected +=  global.inputs.downMenu - global.inputs.upMenu;
+		self.optionSelected +=  _move;
 
 		if (self.optionSelected >= array_length(self.options)) {
 			self.optionSelected = 0;
@@ -82,18 +97,30 @@ function Menu(_options = []) constructor {
 	/// @param {Bool} [_shadow] display shadow under the text ? (default: false)
 	/// @param {Bool} [_enableMouse] Allow mouse to navigate ? (default: true)
 	/// @param {Bool} [_enableBox] If mouse is allowed, display a bounding box on items ? (default: false)
-	/// @param {Bool} [_fromBottom] If enabled, draw the menu from the bottom instead of the top
 	/// @param {Bool} [_cursors] Display cursor before and after selected option ? (default: true)
 	/// @param {Constant.Color} [_color] Font color (default: c_white)
 	/// @param {Asset.GMSprite} [_sprite] Display a sprite under menu item ? (default: undefined)
-	static render = function(_startX, _startY, _size, _shadow = false, _enableMouse = true, _enableBox = false, _fromBottom = false, _cursors = true, _color = c_white, _sprite = undefined) {
+	static render = function(_startX, _startY, _size, _shadow = false, _enableMouse = true, _enableBox = false, _cursors = true, _color = c_white, _sprite = undefined) {
 		if (!self.filtered) {
 			self.filter();
 		}
 		
+		show_debug_message("self.optionSelected {0}", self.optionSelected);
+		
 		var _initial_valign = draw_get_valign();
 		var _initial_halign = draw_get_halign();	
+		var _mousePointDisabled = false;
 		
+		var _newMouseX = window_mouse_get_x();
+		var _newMouseY = window_mouse_get_y();
+		
+			if(_newMouseX == self.mouseX && _newMouseY == self.mouseY) {
+				// Mouse don't moved, bypass the next checks
+				_mousePointDisabled = true;
+			}
+			
+			self.mouseY = _newMouseY;
+			self.mouseX = _newMouseX;
 
 		for (var _i = 0; _i < array_length(self.options); _i++) {
 			var _print = "";
@@ -113,7 +140,7 @@ function Menu(_options = []) constructor {
 				_opacity = _current.option.unselectedOpacity;
 			}
 			
-			var _offsetPositionY = _fromBottom ? 0 -  (_i * _size) :  (_i * _size);
+			var _offsetPositionY = self.fromBottom ? 0 -  (_i * _size) :  (_i * _size);
 			var _offset_x = _startX;
 			var _offset_y = _startY + _offsetPositionY;
 			
@@ -145,7 +172,7 @@ function Menu(_options = []) constructor {
 			}
 			
 			if(_enableMouse) {					
-				self.mouse(_params, _i, _enableBox);
+				self.mouse(_newMouseX, _newMouseY, _params, _i, _enableBox, _mousePointDisabled);
 			}
 			
 			if(_sprite) {
@@ -245,7 +272,7 @@ function Menu(_options = []) constructor {
 	};
 	
 
-	static mouse = function(_params, _index, _enableBox) {
+	static mouse = function(_mouseX, _mouseY, _params, _index, _enableBox, _mousePointDisabled) {
 		
 			global.mouseCursor = true;
 			
@@ -260,15 +287,22 @@ function Menu(_options = []) constructor {
 				draw_rectangle(_x1, _y1, _x2, _y2, true);
 			}
 
+		
 
-			if (point_in_rectangle(window_mouse_get_x(), window_mouse_get_y(), _x1, _y1, _x2, _y2)) {
-				
-				
-				if(self.optionSelected != _index) {
-					self.optionSelected = _index;
-					var _selected = self.options[self.optionSelected];
 
-					playSound(_selected.option.sound, 0.3);
+
+			if (point_in_rectangle(_mouseX, _mouseY, _x1, _y1, _x2, _y2)) {
+				
+		
+				
+				if(!_mousePointDisabled) {
+									
+					if(self.optionSelected != _index) {
+						self.optionSelected = _index;
+						var _selected = self.options[self.optionSelected];
+
+						playSound(_selected.option.sound, 0.3);
+					}
 				}
 				
 				if(global.inputs.clickMenu) {
@@ -279,8 +313,7 @@ function Menu(_options = []) constructor {
 				}
 				
 			}
-			
-		return false;
+
 		
 	};
 	
@@ -383,7 +416,8 @@ function Menu(_options = []) constructor {
 /// @param {Constant.Color} [_color] Font color (default: c_white)
 /// @param {Asset.GMSprite} [_sprite] Display a sprite under menu item ? (default: undefined)
 function renderMenu(_menu, _startX, _startY, _size, _shadow = false, _enableMouse = true, _enableBox = DEBUG, _fromBottom = false, _cursors = true, _color = c_white, _sprite = undefined) {
-	_menu.render(_startX, _startY, _size, _shadow, _enableMouse, _enableBox, _fromBottom, _cursors, _color, _sprite);
+	_menu.fromBottom = _fromBottom;
+	_menu.render(_startX, _startY, _size, _shadow, _enableMouse, _enableBox, _cursors, _color, _sprite);
 }
 
 function renderMenuTemplate(_menu, _template) {
@@ -393,33 +427,8 @@ function renderMenuTemplate(_menu, _template) {
 			renderMenu(_menu, global.windowWidth * 0.5, global.windowHeight * 0.5, 48*2);
 			break;
 		case MenuTemplate.RIGHT_DOWN:
-			var _sizes = getMenuSizes();
 			draw_set_font(fMenu);
-			renderMenu(_menu,_sizes.menuX, _sizes.menuY,36,false, true, DEBUG, true);
+			renderMenu(_menu, global.windowRightGUIMargin, global.windowDownGUIMargin,36,false, true, DEBUG, true);
 			break;			
-	}
-}
-
-function getMenuSizes() {
-	var _guiXMargin = global.windowWidth * 0.04;
-	var _guiYMargin = global.windowHeight * 0.04;
-	// var _guiYMargin = _guiXMargin * 5;
-
-	//var _menuXMargin = global.windowWidth * 0.25;
-
-	var _menuX = global.windowWidth - _guiXMargin;
-	var _menuY = global.windowHeight - _guiYMargin;
-	//var _menuXTarget = global.windowWidth - _guiXMargin;	
-	
-	//addDebugVariable("_menuX", _menuX);
-	//addDebugVariable("_menuY", _menuY);
-	
-	return {
-		//guiXMargin: _guiXMargin,
-		//guiYMargin: _guiYMargin,
-		//menuXMargin: _menuXMargin,
-		menuX: _menuX,
-		menuY: _menuY,
-		//menuXTarget: _menuXTarget
 	}
 }

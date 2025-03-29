@@ -233,7 +233,7 @@ function drawTextInGame(x, y, text, colour = undefined, size = undefined, align 
 	var resolvedAlign = textAlignToAlign(align);
 	var _resolveColor = textColorToColor(colour);
 	var _resolveFont = textSizeToFont(size);
-	
+		
 	if(shadow) {
 		var _resolveColorShadow = textColorToColor(TextColor.DARK);
 		_drawTextGUIInternal(1, x, y, text, _resolveColorShadow, _resolveFont, resolvedAlign[0], resolvedAlign[1], alpha - 0.3, angle);
@@ -329,6 +329,8 @@ function drawTextAndSprite(key, textAndSpriteArray, x, y, colour, size, align) {
 	var _xOffset = 0;
 	// var _sumWidth = 0;
 	var _arrayLength = array_length(textAndSpriteArray);
+	
+	//show_debug_message("key: {0}, x: {1}, y: {2}", key, x, y);
 	
 	
 	if(!ds_map_exists(global.drawTextAndSpriteMap, key)) {

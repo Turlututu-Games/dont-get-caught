@@ -1,10 +1,10 @@
 horizontalSpeed = 0;
 verticalSpeed = 0;
 
-gravityForce = 0.3;
+gravityForce = PLAYER_GRAVITY_FORCE;
 
-walkSpeed = 4;
-jumpSpeed = 5;
+walkSpeed = PLAYER_WALK_SPEED;
+jumpSpeed = PLAYER_JUMP_SPEED;
 
 hasControl = true;
 onRope = false;
