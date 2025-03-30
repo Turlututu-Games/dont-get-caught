@@ -19,32 +19,34 @@ var _ratio = global.windowSizeRatio;
 if(_windowWidth != global.windowWidth) {
 	
 
-	
-	global.windowHeight = _windowHeight;
-	var _newWidth = round(_windowHeight * RATIO);
-	
+	// Force the resolution on bounds
+	var _normalizedHeight = minMax(_windowHeight, 480, 2160);
+	global.windowHeight = _normalizedHeight;
+	var _newWidth = round(_normalizedHeight * RATIO);
+		
 	global.windowWidth = _newWidth;
 	
-	show_debug_message("Set global resolution: {0}x{1}", _newWidth, _windowHeight );
+	show_debug_message("Set global resolution: {0}x{1}", _newWidth, _normalizedHeight );
 	
 	if(_ratio == -1) {
 		global.windowSizeRatio = 1;	
-		_initialHeight = _windowHeight;
+		_initialHeight = _normalizedHeight;
 	} else {
-		global.windowSizeRatio = _windowHeight / _initialHeight;
+		global.windowSizeRatio = _normalizedHeight / _initialHeight;
 	}
 	
 	var _windowWidthGUIMargin = _newWidth * 0.04;
-	var _windowHeightGUIMargin = _windowHeight * 0.08;
+	var _windowHeightGUIMargin = _normalizedHeight * 0.08;
 	
 	global.windowLeftGUIMargin = _windowWidthGUIMargin;
 	global.windowTopGUIMargin = _windowHeightGUIMargin;
 	
 	global.windowRightGUIMargin = _newWidth - _windowWidthGUIMargin;
-	global.windowDownGUIMargin = _windowHeight - _windowHeightGUIMargin;
+	global.windowDownGUIMargin = _normalizedHeight - _windowHeightGUIMargin;
 	
+	//writeDebugLog(string("Set global resolution: {0}x{1}", _newWidth, _windowHeight ));
 	// window_set_size(global.windowWidth, global.windowHeight);
-	surface_resize(application_surface, _newWidth, _windowHeight);	
+	surface_resize(application_surface, _newWidth, _normalizedHeight);	
 }
 
 addDebugVariable("fps", game_get_speed(gamespeed_fps))

@@ -25,4 +25,5 @@
 #macro PLAYER_SPRITE_IDLE sPlayerJohnIdle
 
 #macro SAVE "Settings/savedata.ini"
+#macro LOGFILE "game.log"
 #macro SAVE_STEAM "savedata.ini"

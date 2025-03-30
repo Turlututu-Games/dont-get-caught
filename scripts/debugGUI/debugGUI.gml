@@ -16,3 +16,20 @@ function debugGUI(element, index)
 function addDebugVariable(name, value) {
 	array_push(global.debugVariables, [name, value]);
 }
+
+function writeDebugLog(message) {
+	var file = file_text_open_append(working_directory + LOGFILE);
+	
+	file_text_write_string(file, string("{0} {1}: {2}", 
+		date_date_string(date_current_datetime()), 
+		date_time_string(date_current_datetime()),
+		message
+	))
+	file_text_writeln(file);
+	file_text_close(file);
+
+}
+
+function minMax(val, minVal, maxVal) {
+	return max(min(val, maxVal), minVal);	
+}
