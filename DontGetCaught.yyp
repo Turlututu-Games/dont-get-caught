@@ -1,6 +1,6 @@
 {
   "$GMProject":"v1",
-  "%Name":"BigBrother",
+  "%Name":"DontGetCaught",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
@@ -64,7 +64,7 @@
   "MetaData":{
     "IDEVersion":"2024.1300.0.743",
   },
-  "name":"BigBrother",
+  "name":"DontGetCaught",
   "resources":[
     {"id":{"name":"Steamworks","path":"extensions/Steamworks/Steamworks.yy",},},
     {"id":{"name":"fMenu","path":"fonts/fMenu/fMenu.yy",},},
