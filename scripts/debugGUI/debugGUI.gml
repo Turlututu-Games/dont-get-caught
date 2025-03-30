@@ -1,11 +1,13 @@
 function debugGUI(element, index)
 {
+	var _offset = global.windowTopGUIMargin;
+	
 	var name = element[0];
 	var value = element[1];
 	var text = name + ": " + string(value);
-	var position = (index * 20) + 40;
+	var position = (index * (_offset * 0.5)) + _offset;
 	
-	drawTextGUITemplate(40, position + 2, text, TextTemplate.STANDARD_SHADOW);
+	drawTextGUITemplate(global.windowLeftGUIMargin, position, text, TextTemplate.STANDARD_SHADOW);
 }
 
 /// @func addDebugVariable(name, value) Add a variable to the debug output for the current step

@@ -4,11 +4,11 @@ resetTexts();
 
 var _startX = global.windowWidth * 0.5;
 var _titleY = global.windowHeight * 0.3;
-var _size = 58 //* global.windowSizeRatio; // 48;
-var _startY = _titleY + _size;
+var _size = 58 * global.windowSizeRatio; // 48;
+var _startY = _titleY + _size * 2;
 
 
-drawTextGUITemplate(_startX, _titleY, "Options", TextTemplate.SUB_MENU_TITLE);
+drawTextGUITemplate(_startX, _titleY, translate("options"), TextTemplate.SUB_MENU_TITLE);
 
 // draw_set_halign(fa_right);
 renderMenu(

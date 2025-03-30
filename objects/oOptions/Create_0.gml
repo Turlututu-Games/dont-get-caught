@@ -4,6 +4,10 @@ _menuOptions.halign = fa_right;
 _menuOptions.doubleWidth = true;
 _menuOptions.minimalWidth = room_width * 0.3;
 
+var _menuReturnOptions = new MenuItemOptions();
+_menuReturnOptions.doubleWidth = true;
+_menuReturnOptions.minimalWidth = room_width * 0.3;
+
 function returnToMenu() {
 	
 	room_goto(rMenu);
@@ -52,7 +56,8 @@ displayOptions = [
 // array_push(_menu, new MenuItem("credits", function() { room_goto(rCredits); }));
 array_push(_menu, new MenuItem(
 	"menuReturnToMenu",
-	returnToMenu
+	returnToMenu,
+	_menuReturnOptions
 ));
 
 menu = new Menu(_menu);

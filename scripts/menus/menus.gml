@@ -219,9 +219,9 @@ function Menu(_options = [], _fromBottom = false) constructor {
 
 	static boundingBox = function(_startX, _offset_y, _size, _print, _doubleWidth = false, _minimalWidth = 0) {
 
-
-			var _width = max(_minimalWidth, string_width(_print));
-			var _height = string_height(_print);
+			var _ratio = global.windowSizeRatio;
+			var _width = max(_minimalWidth, string_width(_print)) * _ratio;
+			var _height = string_height(_print) * _ratio;
 			
 			var _halign = draw_get_halign();
 			var _valign = draw_get_valign();

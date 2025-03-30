@@ -262,9 +262,21 @@
   ],
   "templateType":null,
   "TextureGroups":[
-    {"$GMTextureGroup":"","%Name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","customOptions":"","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"name":"Default","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMTextureGroup":"","%Name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","ConfigValues":{
+        "Desktop":{
+          "groupParent":"null",
+          "compressFormat":"bz2",
+          "loadType":"default",
+        },
+      },"customOptions":"","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"name":"Default","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},
     {"$GMTextureGroup":"","%Name":"sgPlayer","autocrop":true,"border":2,"compressFormat":"bz2","customOptions":"","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"name":"sgPlayer","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},
-    {"$GMTextureGroup":"","%Name":"sgInputs","autocrop":true,"border":2,"compressFormat":"bz2","customOptions":"","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"name":"sgInputs","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMTextureGroup":"","%Name":"sgInputs","autocrop":true,"border":2,"compressFormat":"bz2","ConfigValues":{
+        "Desktop":{
+          "groupParent":"null",
+          "compressFormat":"bz2",
+          "loadType":"default",
+        },
+      },"customOptions":"","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"name":"sgInputs","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},
     {"$GMTextureGroup":"","%Name":"sgGUI","autocrop":true,"border":2,"compressFormat":"bz2","ConfigValues":{
         "DesktopSteam":{
           "groupParent":"null",
@@ -277,6 +289,11 @@
           "loadType":"default",
           "mipsToGenerate":"-1",
           "border":"8",
+        },
+        "Desktop":{
+          "groupParent":"null",
+          "compressFormat":"bz2",
+          "loadType":"default",
         },
       },"customOptions":"","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"name":"sgGUI","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},
   ],
