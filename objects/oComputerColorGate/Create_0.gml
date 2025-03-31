@@ -8,7 +8,7 @@ function useComputer() {
 	if(!used) {
 		with(oPlayer) {
 			
-			var _color = translate(other._messageColor);
+			var _color = translate(getTranslationKey(other._messageColor));
 			var _colorUcFirst = capitalizeFirstLetter(_color);
 			
 			var _keyIndex = ds_list_find_index(inventory, other._key);

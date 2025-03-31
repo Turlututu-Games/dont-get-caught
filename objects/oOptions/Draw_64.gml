@@ -8,7 +8,7 @@ var _size = 58 * global.windowSizeRatio; // 48;
 var _startY = _titleY + _size * 2;
 
 
-drawTextGUITemplate(_startX, _titleY, translate("options"), TextTemplate.SUB_MENU_TITLE);
+drawTextGUITemplate(_startX, _titleY, Translation.OPTIONS, TextTemplate.SUB_MENU_TITLE);
 
 // draw_set_halign(fa_right);
 renderMenu(
@@ -35,13 +35,17 @@ for (var _i = 0; _i < array_length(displayOptions); _i++) {
 				 _optionValue = _optionValue ? 1 : 0;
 			 }
 			
-			var _print = "";
+
 			
+			var translationKey = 0;
 			if(is_string(_optionValue)) {
-				_print = translate(struct_get(_current[1], _optionValue));
+				translationKey = getTranslationKey(struct_get(_current[1], _optionValue));
 			} else {
-				_print = translate(_current[1][_optionValue]);
+				translationKey = getTranslationKey(_current[1][_optionValue]);
 			}
+			
+			var _print = translate(translationKey);
+			
 
 			if (_i == menu.optionSelected) {
 				_opacity = 1;

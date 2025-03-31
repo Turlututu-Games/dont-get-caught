@@ -6,7 +6,7 @@
   "name":"oComputerBlue",
   "overriddenProperties":[
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oComputerColorGate","path":"objects/oComputerColorGate/oComputerColorGate.yy",},"propertyId":{"name":"_key","path":"objects/oComputerColorGate/oComputerColorGate.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"blueKey\"",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oComputerColorGate","path":"objects/oComputerColorGate/oComputerColorGate.yy",},"propertyId":{"name":"_messageColor","path":"objects/oComputerColorGate/oComputerColorGate.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"colorBlue\"",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oComputerColorGate","path":"objects/oComputerColorGate/oComputerColorGate.yy",},"propertyId":{"name":"_messageColor","path":"objects/oComputerColorGate/oComputerColorGate.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Translation.COLOR_BLUE",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oComputerColorGate","path":"objects/oComputerColorGate/oComputerColorGate.yy",},"propertyId":{"name":"_gateObject","path":"objects/oComputerColorGate/oComputerColorGate.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"oDoorBlue",},
   ],
   "parent":{

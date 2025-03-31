@@ -26,9 +26,9 @@ function returnToMenu() {
 }
 
 var _menu = [
-	new MenuItem("optionMusic", toggleOptionMusic, _menuOptions),
-	new MenuItem("optionSound", toggleOptionSound, _menuOptions),	
-	new MenuItem("optionLanguage", toggleOptionLanguage, _menuOptions),
+	new MenuItem(Translation.OPTION_MUSIC, toggleOptionMusic, _menuOptions),
+	new MenuItem(Translation.OPTION_SOUND, toggleOptionSound, _menuOptions),	
+	new MenuItem(Translation.OPTION_LANGUAGE, toggleOptionLanguage, _menuOptions),
 
 ];
 
@@ -41,21 +41,21 @@ var _getFullscreen = function() { return global.gameOptions.fullscreen };
 
 
 displayOptions = [
-	[_getMusic, ["optionVolumeLow", "optionVolumeMedium", "optionVolumeHigh"]],
-	[_getSound, ["optionVolumeLow", "optionVolumeMedium", "optionVolumeHigh"]],
-	[_getLanguage, {"en": "optionLanguageEnglish", "fr": "optionLanguageFrench"}],
+	[_getMusic, [Translation.OPTION_VOLUME_LOW, Translation.OPTION_VOLUME_MEDIUM, Translation.OPTION_VOLUME_HIGH]],
+	[_getSound, [Translation.OPTION_VOLUME_LOW, Translation.OPTION_VOLUME_MEDIUM, Translation.OPTION_VOLUME_HIGH]],
+	[_getLanguage, {"en": Translation.OPTION_LANGUAGE_ENGLISH, "fr": Translation.OPTION_LANGUAGE_FRENCH}],
 
 	//,
 ]
 
 //if(!STEAM) {
-	array_push(_menu, new MenuItem("optionDisplay", toggleOptionFullScreen, _menuOptions));
-	array_push(displayOptions, [_getFullscreen, ["optionNoFullScreen", "optionFullScreen"]]);
+	array_push(_menu, new MenuItem(Translation.OPTION_DISPLAY, toggleOptionFullScreen, _menuOptions));
+	array_push(displayOptions, [_getFullscreen, [Translation.OPTION_NO_FULL_SCREEN, Translation.OPTION_FULL_SCREEN]]);
 //}
 
 // array_push(_menu, new MenuItem("credits", function() { room_goto(rCredits); }));
 array_push(_menu, new MenuItem(
-	"menuReturnToMenu",
+	Translation.MENU_RETURN_TO_MENU,
 	returnToMenu,
 	_menuReturnOptions
 ));

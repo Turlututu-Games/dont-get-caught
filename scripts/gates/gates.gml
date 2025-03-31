@@ -17,12 +17,12 @@ function openGate(_trigger, _gateObject, _colorUcFirst) {
 		used = true;
 	}
 	
-	displayMessage(string(translate("computerGateOpen"), _colorUcFirst));
+	displayMessage(string(translate(getTranslationKey(Translation.COMPUTER_GATE_OPEN)), _colorUcFirst));
 	playSound(sfxComputerOpenGate);
 	
 }
 
 function noKey(_colorUcFirst) {
-	displayMessage(string(translate("computerMissingKey"), _colorUcFirst));
+	displayMessage(string(translate(getTranslationKey(Translation.COMPUTER_MISSING_KEY)), _colorUcFirst));
 	playSound(sfxComputerError);
 }

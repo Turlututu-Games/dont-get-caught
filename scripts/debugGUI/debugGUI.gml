@@ -30,6 +30,3 @@ function writeDebugLog(message) {
 
 }
 
-function minMax(val, minVal, maxVal) {
-	return max(min(val, maxVal), minVal);	
-}

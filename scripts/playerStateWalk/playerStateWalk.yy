@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"playerStateWalk",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"playerStateWalk",
+  "parent":{
+    "name":"States",
+    "path":"folders/Scripts/Entities/Player/States.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -45,17 +45,17 @@ var _exit = function() {
 };
 
 var _menu = [
-	//new MenuItem("menuStartDemo", _startDemo, _menuOptions), Temporary disabled
-	new MenuItem("menuPlaytest1Option1", _playtest1Option1, _menuOptions),
-	new MenuItem("menuPlaytest1Option2", _playtest1Option2, _menuOptions),
+	//new MenuItem(Translation.MENU_START_DEMO, _startDemo, _menuOptions), Temporary disabled
+	new MenuItem(Translation.MENU_PLAYTEST1_OPTION1, _playtest1Option1, _menuOptions),
+	new MenuItem(Translation.MENU_PLAYTEST1_OPTION2, _playtest1Option2, _menuOptions),
 ];
 
 if(DEBUG) {
-	array_push(_menu, new MenuItem("menuTestLevels", _debugRooms, _menuOptions));
+	array_push(_menu, new MenuItem(Translation.MENU_TEST_LEVELS, _debugRooms, _menuOptions));
 }
 
-array_push(_menu, new MenuItem("options",_options, _menuOptions));
-array_push(_menu, new MenuItem("exit",_exit, _menuOptionsDesktop));
+array_push(_menu, new MenuItem(Translation.OPTIONS,_options, _menuOptions));
+array_push(_menu, new MenuItem(Translation.EXIT,_exit, _menuOptionsDesktop));
 
 // reverse, because of the fromBottom display
 _menu = array_reverse(_menu);

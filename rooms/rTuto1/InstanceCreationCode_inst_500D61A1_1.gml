@@ -1,1 +1,1 @@
-_inputs = ["tutoMouse2"];
+_inputs = [getTranslationKey(Translation.TUTO_CAMERA2)];

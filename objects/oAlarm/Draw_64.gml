@@ -48,32 +48,4 @@ if(global.gameOptions.detectionTimer) {
 		);
 	
 		draw_sprite_stretched(sDangerOverlay, 0, _mainWidth, _mainHeight - _sideHeight, _sideWidth, _sideHeight);
-
-
-	// draw_sprite_part_ext
-	
-	// draw_sprite_stretched(sCameraOverlaySmall, animationFrame, drawX, drawY, 100, 100);
-	/*draw_sprite_part_ext(
-		sDangerOverlay, // sprice
-		0, // subimg
-		0, // left
-		0, // top
-		percent * _sideWidth, // width
-		_sideHeight, // height
-		_mainWidth, // x
-		_mainHeight - _sideHeight, // y
-		global.windowSizeRatio,
-		global.windowSizeRatio,
-		c_white,
-		1
-	);*/
-	
-
-
-		/*drawTextGUITemplate(
-			_mainWidth + _offsetText, // x
-			_mainHeight - _barHeight, // y
-			translate("cameraDetection"),
-			TextTemplate.STANDARD
-		)*/
 	}

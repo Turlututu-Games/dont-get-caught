@@ -1,1 +1,1 @@
-_inputs = ["tutoRope"];
+_inputs = [getTranslationKey(Translation.TUTO_ROPE)];

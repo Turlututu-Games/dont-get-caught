@@ -1,1 +1,1 @@
-_inputs = ["tutoMove"];
+_inputs = [getTranslationKey(Translation.TUTO_MOVE)];

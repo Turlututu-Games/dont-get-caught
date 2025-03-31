@@ -1,1 +1,1 @@
-_inputs = ["tutoPress", InputType.RESTART, "tutoTo"];
+_inputs = [getTranslationKey(Translation.TUTO_PRESS), InputType.RESTART, getTranslationKey(Translation.TUTO_TO)];

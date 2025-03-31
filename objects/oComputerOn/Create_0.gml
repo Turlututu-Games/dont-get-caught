@@ -12,7 +12,7 @@ function toggleCamera() {
 	}
 	
 	playSound(sfxComputerExecute);
-	displayMessage(string(translate("computerOnOffCameraToggled"), 4))
+	displayMessage(string(translate(getTranslationKey(Translation.COMPUTER_ON_OFF_CAMERA_TOGGLED)), 4))
 
 }
 

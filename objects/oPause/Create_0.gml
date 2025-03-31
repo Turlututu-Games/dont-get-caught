@@ -6,4 +6,3 @@ previousState = false;
 
 global.pauseMenu = new Menu([]);
 
-pauseText = translate("menuPause");

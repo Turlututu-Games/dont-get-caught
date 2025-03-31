@@ -1,1 +1,1 @@
-_inputs = [InputType.LEFT, "tutoAnd", InputType.RIGHT];
+_inputs = [InputType.LEFT, getTranslationKey(Translation.TUTO_AND), InputType.RIGHT];

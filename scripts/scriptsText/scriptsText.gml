@@ -179,7 +179,7 @@ function _drawTextGUIInternal(ratio, x, y, text, colour, font, halign, valign, a
 /// @function drawTextGUI(x, y, text, [colour], [size], [align], [shadow], [alpha], [angle])
 /// @param {Real} x Horizontal position
 /// @param {Real} y Vertical position
-/// @param {String} text Text to display
+/// @param {String,Real} text Text to display
 /// @param {Struct.TextColor,Undefined} [colour] Text colour
 /// @param {Struct.TextSize,Undefined} [size] Text size
 /// @param {Struct.TextAlign,Undefined} [align] Text alignment
@@ -191,18 +191,20 @@ function drawTextGUI(x, y, text, colour = undefined, size = undefined, align = u
 	var _resolveColor = textColorToColor(colour);
 	var _resolveFont = textSizeToFont(size);
 	
+	var _text = is_string(text) ? text : getTranslationKey(text);
+	
 	if(shadow) {
 		var _resolveColorShadow = textColorToColor(TextColor.DARK);
-		_drawTextGUIInternal(global.windowSizeRatio, x, y, text, _resolveColorShadow, _resolveFont, resolvedAlign[0], resolvedAlign[1], alpha - 0.3, angle);
+		_drawTextGUIInternal(global.windowSizeRatio, x, y, _text, _resolveColorShadow, _resolveFont, resolvedAlign[0], resolvedAlign[1], alpha - 0.3, angle);
 	}
 	
-	_drawTextGUIInternal(global.windowSizeRatio, x, y, text, _resolveColor, _resolveFont, resolvedAlign[0], resolvedAlign[1], alpha, angle);
+	_drawTextGUIInternal(global.windowSizeRatio, x, y, _text, _resolveColor, _resolveFont, resolvedAlign[0], resolvedAlign[1], alpha, angle);
 }
 
 /// @function drawTextGUITemplate(x, y, text, template)
 /// @param {Real} x Horizontal position
 /// @param {Real} y Vertical position
-/// @param {String} text Text to display
+/// @param {String,Real} text Text to display
 /// @param {Struct.TextTemplate} template Text template
 function drawTextGUITemplate(x, y, text, template) {
 	switch(template) {
@@ -227,7 +229,7 @@ function drawTextGUITemplate(x, y, text, template) {
 /// @function drawTextInGame(x, y, text, [colour], [size], [align], [shadow], [alpha], [angle])
 /// @param {Real} x Horizontal position
 /// @param {Real} y Vertical position
-/// @param {String} text Text to display
+/// @param {String,Real} text Text to display
 /// @param {Struct.TextColor,Undefined} [colour] Text colour
 /// @param {Struct.TextSize,Undefined} [size] Text size
 /// @param {Struct.TextAlign,Undefined} [align] Text alignment
@@ -280,7 +282,7 @@ function prepareDrawTextAndSprite(_arrayLength, _textAndSpriteArray) {
 				_value = _sprite;
 				isSprite = true;
 			}
-		} 
+		}
 		
 		
 		if(isSprite) {
@@ -312,9 +314,9 @@ function prepareDrawTextAndSprite(_arrayLength, _textAndSpriteArray) {
 	}
 }
 
-/// @function drawTextAndSprite(colour, font, halign, valign)
-/// @param {string} key Key for the DS Map to store prepared text
-/// @param {Array<String,Asset.GMSprite>}textAndSpriteArray Array containing text or sprite
+/// @function drawTextAndSprite(key, textAndSpriteArray, x, y, colour, font, halign, valign)
+/// @param {String} key Key for the DS Map to store prepared text
+/// @param {Array<String,Real,Asset.GMSprite>}textAndSpriteArray Array containing text or sprite
 /// @param {Real} x horizontal position
 /// @param {Real} y vertical position
 /// @param {Struct.TextColor} colour Text colour
@@ -394,6 +396,7 @@ function capitalizeFirstLetter(text) {
 	var _rest = string_copy(text,2,string_length(text));
 	return $"{_first}{_rest}";
 }
+
 
 function displayMessage(msg) {
 	if(!instance_exists(oFloatingTextBox)) {

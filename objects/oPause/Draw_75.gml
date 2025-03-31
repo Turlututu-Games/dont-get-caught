@@ -8,7 +8,7 @@ if(global.pause) {
 	draw_rectangle(0,0,global.windowWidth,global.windowHeight,false);
 	resetTexts();
 	
-	drawTextGUITemplate(global.windowWidth * 0.5, global.windowHeight * 0.3, pauseText, TextTemplate.MENU_TITLE);
+	drawTextGUITemplate(global.windowWidth * 0.5, global.windowHeight * 0.3, Translation.MENU_PAUSE, TextTemplate.MENU_TITLE);
 	
 	draw_set_font(fMenu48);
 	

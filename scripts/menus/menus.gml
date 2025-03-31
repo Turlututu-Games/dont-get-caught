@@ -28,7 +28,7 @@ function MenuItemOptions(
 }
 
 /// @func Menu item
-/// @param {String} _name The text for the option
+/// @param {String,Real} _name The text for the option
 /// @param {Function} _action The action to execute
 /// @param {Struct.MenuItemOptions} _option Options for the item
 function MenuItem(
@@ -124,7 +124,8 @@ function Menu(_options = [], _fromBottom = false) constructor {
 			var _print = "";
 			var _current = self.options[_i];
 			var _opacity = 1.0;
-			var _name = translate(_current.name);
+			var _translationKey = is_string(_current.name) ? _current.name : getTranslationKey(_current.name);
+			var _name = translate(_translationKey);
 
 			if (_i == self.optionSelected) {
 				if(_cursors) {

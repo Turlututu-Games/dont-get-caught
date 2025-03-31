@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"playerState",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"playerState",
+  "parent":{
+    "name":"Player",
+    "path":"folders/Scripts/Entities/Player.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

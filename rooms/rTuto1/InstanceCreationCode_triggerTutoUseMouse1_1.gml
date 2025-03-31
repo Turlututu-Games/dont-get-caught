@@ -1,1 +1,1 @@
-_inputs = ["tutoUse", InputType.NEXT_CAMERA, "tutoAnd", InputType.PREVIOUS_CAMERA];
+_inputs = [getTranslationKey(Translation.TUTO_USE), InputType.NEXT_CAMERA, getTranslationKey(Translation.TUTO_AND), InputType.PREVIOUS_CAMERA];

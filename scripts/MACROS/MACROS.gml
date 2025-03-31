@@ -3,6 +3,8 @@
 
 #macro RATIO 16 / 9
 
+#macro FPS game_get_speed(gamespeed_fps)
+
 #macro Debug:DEBUG true
 #macro DesktopSteam:STEAM true
 
@@ -12,6 +14,12 @@
 #macro INTERRACTIONS_LAYER "Interractions"
 #macro LEVEL_DESIGN_LAYER "LevelDesign"
 #macro COLLISIONS_LAYER "Collisions"
+
+// Calculate appropriate direction (four directions) 
+#macro CARDINAL_DIR round(direction/90)
+
+// Calculate appropriate direction (horizontal directions) 
+#macro HORIZONTAL_DIR round(direction/180)
 
 #macro PLAYER_GRAVITY_FORCE 0.3
 #macro PLAYER_WALK_SPEED 4

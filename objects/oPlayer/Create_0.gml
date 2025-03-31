@@ -38,6 +38,9 @@ state = ActionStates.IDLE;
 previousState = -1;
 currentSound = -1;
 
+localFrame = 0;
+animationEnd = true;
+
 function stopAllSounds() {
 	audio_stop_sound(sfxClimb);
 	audio_stop_sound(sfxFall);
@@ -47,16 +50,16 @@ function stopAllSounds() {
 
 started = false; // Set to true after the first game interraction
 
-optionContinueGame = new MenuItem("menuContinue", function() {
+optionContinueGame = new MenuItem(Translation.MENU_CONTINUE, function() {
 	global.pause = false;
 });
 
-optionRestartGame = new MenuItem("menuRestart", function() {
+optionRestartGame = new MenuItem(Translation.MENU_RESTART, function() {
 	global.pause = false;
 	room_restart();
 });
 
-optionReturnToMenu = new MenuItem("menuReturnToMenu", function() {
+optionReturnToMenu = new MenuItem(Translation.MENU_RETURN_TO_MENU, function() {
 	global.pause = false;
 	slideTransition(Transition.GOTO, rMenu); 
 	global.allowPause = true;

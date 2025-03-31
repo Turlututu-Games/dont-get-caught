@@ -5,7 +5,7 @@ var _optionReturnToMenu = new MenuItem("menuReturnToMenu", function() {
 	slideTransition(Transition.GOTO, rMenu); 
 });
 
-var _optionExitToDesktop = new MenuItem("exit", function() {
+var _optionExitToDesktop = new MenuItem(Translation.EXIT, function() {
 	game_end();
 });	
 
@@ -30,7 +30,7 @@ functionToCallOnDrawTrigger = function() {
 	draw_rectangle(0,0,global.windowWidth,global.windowHeight,false);
 	resetTexts();
 	
-	drawTextGUITemplate(global.windowWidth * 0.5, global.windowHeight * 0.3, translate("endOfDemo"), TextTemplate.MENU_TITLE );
+	drawTextGUITemplate(global.windowWidth * 0.5, global.windowHeight * 0.3, Translation.END_OF_DEMO, TextTemplate.MENU_TITLE );
 	
 	draw_set_font(fMenu48);
 	

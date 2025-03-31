@@ -1,1 +1,1 @@
-_inputs = ["tutoPress", InputType.USE, "tutoInterract"];
+_inputs = [getTranslationKey(Translation.TUTO_PRESS), InputType.USE, getTranslationKey(Translation.TUTO_INTERRACT)];

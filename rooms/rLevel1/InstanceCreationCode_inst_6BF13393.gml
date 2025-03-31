@@ -1,1 +1,1 @@
-_inputs = ["tutoReset2"];
+_inputs = [getTranslationKey(Translation.TUTO_RESET2)];
