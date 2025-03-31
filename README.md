@@ -1,9 +1,11 @@
 # Don't Get Caught! Big Brother is Watching You
-https://mcradane.itch.io/dont-get-caught
+[![Steam Store Page](https://img.shields.io/badge/Steam_store_page-grey)](https://store.steampowered.com/app/2948400/Dont_Get_Caught)
+[![Itch.IO Page](https://img.shields.io/badge/Itch.io_page-green)](https://mcradane.itch.io/dont-get-caught)
+
 
 This is a prototype of game made during the 12th weekend of game programming for the website Developpez.com. The theme where "play with camera" and "big brother".
 
-The GameJam version is archived on branch https://github.com/Leomaradan/we-jv12-gm2-bigbrother/tree/we-jv12, as I think it must remain accessible
+The GameJam version is archived on branch https://github.com/Turlututu-Games/dont-get-caught/tree/we-jv12, as I think it must remain accessible
 
 ## Gameplay
 You control a character in a side-plateformer. You also control the security cameras of each levels. It means that your character can be off-scene, and you need to understand the level geometry with incomplete views.
